@@ -1,0 +1,288 @@
+body {
+	background-image: url(img/page_shadow.png);
+	background-position: center;
+	background-repeat: repeat-y;
+	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+	width: 970px;
+	margin: 0 auto;
+}
+.main {
+	width: 970px;
+	height: 200px;
+	/*margin: 0 auto;*/
+	background-image: url(img/head-background.gif);
+}
+.main .headconteiner {
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.main .headconteiner .title {
+	float: left;
+	width: 670px;
+	background-image: url(img/titulo.gif);
+	background-position: right bottom;
+	height: 138px;
+	background-repeat: no-repeat;
+}
+.main .headconteiner .logo {
+	width: 250px;
+	float: right;
+	background-image: url(img/medicina2.gif);
+	height: 200px;
+	background-position: center center;
+	background-repeat: no-repeat;	
+}
+.main .headconteiner .menu-head {
+}
+.block {
+	width: 970px;
+	padding-bottom: 20px;
+}
+.footer{
+	width: 940px;
+	/*margin: 0 auto;*/
+	border-top-style: solid;
+	border-top-color: #000099;
+	border-top-width: 1px;
+	clear: both;
+}
+.footer .footer-text {
+	font-size: 9px;
+	text-align: center;
+	vertical-align: middle;
+	width: 940px;
+}
+.footer .footer-text .important {
+	font-weight: bold;
+}
+.breadcrum {
+	font-weight: bold;
+	color: #000000;
+	padding-left: 5px;
+}
+.block .loginface {
+	vertical-align: middle;
+	width: 400px;
+	height: 250px;
+	margin: 0 auto;
+	padding-top: 35px;
+	background-image: url(img/loginbox.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+.block .loginface .error-msg {
+	font-weight: bold;
+	color: #CC0000;
+	text-align: justify;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.block .loginface .loginbox {
+}
+.block .loginface .loginbox {
+	padding-top: 25px;
+	padding-bottom: 40px;
+	margin: 0 auto;
+}
+.input-cont {
+	width: 200px;
+	height: 30px;
+	vertical-align: middle;
+}
+.submit-cont {
+	width: 300px;
+	text-align: right;
+	height: 30px;
+}
+.label {
+	font-weight: bold;
+	color: #666666;
+	text-align: right;
+	padding-right: 30px;
+	width: 150px;
+	height: 30px;
+}
+.block .loginface .loginbox .logintable {
+	width: 300px;
+}
+.block .menu-lateral {
+	width: 200px;
+	/*border: 1px dotted #FF00FF;*/
+	float: left;
+}
+.white-space {
+	height: 20px;
+}
+.block .menu-central {
+	width: 765px;
+	float: right;
+	/*border: 1px dotted #0000FF;*/
+}
+.block .menu-central .menu-icons {
+	/*border: 1px outset #0066FF;*/
+	width: 560px;
+	float: left;
+	background-image: url(img/menu-body.png);
+	background-repeat: repeat-y;
+}
+.block .menu-central .sec-dialogs {
+	border: 1px outset #990000;
+	width: 200px;
+	float: right;
+	height: 300px;
+}
+.block .menu-lateral .menu-box-top {
+	/*border: 1px outset #0066FF;*/
+	background-image: url(img/menu-box-top.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	height: 11px;
+}
+.block .menu-lateral .menu-box-body {
+	background-image: url(img/menu-box-body.gif);
+	background-repeat: repeat-y;
+	background-position: center center;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+.block .menu-lateral .menu-box-bottom {
+	background-image: url(img/menu-box-bottom.gif);
+	background-position: center top;
+	height: 12px;
+	background-repeat: no-repeat;
+}
+.block .menu-lateral .menu-box-body .menu-item {
+	font-weight: bold;
+	height: 25px;
+	font-size: 13px;
+	vertical-align: middle;
+}
+.block .menu-lateral .menu-box-body .menu-item span{
+	color: #000077;
+	text-decoration: none;
+	padding-left: 25px;
+	cursor: pointer;
+}
+.block .menu-lateral .menu-box-body .menu-item .sm{
+	color: #000077;
+	text-decoration: none;
+	padding-left: 25px;
+	cursor: pointer;
+}
+.block .menu-lateral .menu-box-body .menu-item a{
+	color: #000077;
+	text-decoration: none;
+	padding-left: 25px;
+}
+.block .menu-lateral .menu-box-body .menu-item a:hover{
+	color: #3333CC;
+	text-decoration: none;
+	padding-left: 25px;
+	background-image: url(img/row-bull.gif);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+/*submenus*/
+.block .menu-lateral .menu-box-body .submenu-item{
+	font-weight: bold;
+	height: 25px;
+	font-size: 13px;
+	vertical-align: middle;
+	display: none;
+}
+.block .menu-lateral .menu-box-body .submenu-item a{
+	color: #000077;
+	text-decoration: none;
+	padding-left: 35px;
+}
+.block .menu-lateral .menu-box-body .submenu-item a:hover{
+	color: #3333CC;
+	text-decoration: none;
+	padding-left: 35px;
+	background-image: url(img/row-bull.gif);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+/**/
+.block .menu-central .menu-icons .menu-head {
+	background-color: #999999;
+	height: 30px;
+	width: 560px;
+	text-align: center;
+	color: #FFFFFF;
+	background-image: url(img/menu-head.png);
+}
+.block .menu-central .menu-icons .menu-cont-left {
+	width: 276px;
+	float: left;
+}
+.block .menu-central .menu-icons .menu-cont-right {
+	width: 276px;
+	height: 150px;
+	float: right;
+}
+.block .menu-central .menu-icons .menu-footer {
+	background-color: #999999;
+	text-align: center;
+	clear: both;
+	height: 20px;
+	width: 560px;
+	color: #FFFFFF;
+	background-image: url(img/menu-foot.png);
+}
+.menu-col-left {
+	float: left;
+	width: 136px;
+	text-align: center;
+	/*padding-left: 18px;*/
+	/*border: 1px dashed #999999;*/
+}
+.menu-col-right {
+	float: right;
+	width: 136px;
+	text-align: center;
+	/*padding-left: 18px;*/
+	/*border: 1px dashed #999999;*/
+}
+.menu-item-icon {
+	/*border: 1px solid #FF0000;*/
+	height: 120px;
+	width: 100px;
+	text-align: center;
+	text-decoration: none;
+	margin: 0 auto;
+}
+.menu-item-icon a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.menu-item-icon a:hover{
+	text-decoration: none;
+	color: #FFFFFF;	
+}
+.menu-item-icon a:visited{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.menu-item-label {
+	/*border: 1px solid #FF0000;*/	
+	background-position: center;
+	text-align: center;
+	width: 100px;
+	font-size: 13px;
+	font-weight: bold;
+	padding-bottom: 30px;
+	margin: 0 auto;
+}
+.menu-item-label a{
+	text-decoration: none;
+	color: #3333CC;
+}
+.menu-item-label a:hover{
+	text-decoration: none;
+	color: #3333CC;
+}
+.menu-item-label a:visited{
+	text-decoration: none;
+	color: #3333CC;
+}
