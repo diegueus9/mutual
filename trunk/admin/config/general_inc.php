@@ -1,3 +1,3 @@
 <?php
-$strProgramPath='C:\\wamp\\www\\mutual';
+$strProgramPath='C:\\wamp\\www\\simers';
 ?>
