@@ -45,6 +45,7 @@ body {
 	border-top-color: #000099;
 	border-top-width: 1px;
 	clear: both;
+	margin: 0 auto;
 }
 .footer .footer-text {
 	font-size: 9px;
@@ -112,6 +113,7 @@ body {
 }
 .white-space {
 	height: 20px;
+	clear: both;
 }
 .block .menu-central {
 	width: 765px;

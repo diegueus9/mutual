@@ -37,4 +37,13 @@ function esFechaValida($strFecha){
 	return $esValida;
 }
 
+function redirect ($varStrPath){
+		
+		echo "<script language=\"javascript\">";
+		echo "window.location=\"$varStrPath\"";
+		echo "</script>";
+		echo "<p>Javascript is disabled in your browser.  <a href='$varStrPath'>Click here</a> to continue.</p>";
+		
+	}
+
 ?>

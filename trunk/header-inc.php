@@ -17,7 +17,8 @@ class Header{
 			
 			if (isset($strAppPath) && $strAppPath != "") {
 				$this->strAppPath = "/".$strAppPath;
-			}			
+				$tplHeader->assign("menu", "ok");
+			}
 			$tplHeader->assign("appPath", "inicio".$this->strAppPath);
 								
 		}

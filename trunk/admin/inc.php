@@ -17,7 +17,8 @@ if (file_exists($strAddPath."admin/config/classes_inc.php"))
 if (file_exists($strAddPath."admin/classes/TplLoad.php"))
 	include($strAddPath."admin/classes/TplLoad.php");
 	
-if (file_exists($strAddPath."confdatabase-2.php"))
-	include($strAddPath."confdatabase-2.php");
+// include miscellaneous functions 
+if (file_exists($strAddPath."miscellaneous.php"))
+	include($strAddPath."miscellaneous.php");
 
 ?>
