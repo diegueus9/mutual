@@ -1,6 +1,7 @@
-<?php /* Smarty version 2.6.15, created on 2007-01-09 17:58:36
+<?php /* Smarty version 2.6.15, created on 2007-01-16 18:31:27
          compiled from footer.tpl */ ?>
 </div><!-- Cierra bloque de proceso y termina la pagina -->
+<div class="white-space"></div>
 <div class="footer">
 	<div class="footer-text">		
 		<span class="important">SIMERS S.A.</span><br />
