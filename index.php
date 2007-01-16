@@ -7,8 +7,10 @@ if (!$logManager->isLogged()) {
 	include_once("login.php");
 }else {		
 	new Header("menu principal");
-	echo "<h1>MENU PRINCIPAL</h1>";
+	$tplIndex = new TplLoad();
+	$tplIndex->display("index.tpl");
 }
 
 include_once("footer-inc.php");
+new Footer();
 ?>

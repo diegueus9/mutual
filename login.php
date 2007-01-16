@@ -12,7 +12,8 @@ if ($_POST["submit"]){
 		$strError .= "verifique sus datos";
 		$boolLoginOk = false;
 	}else {		
-		$loginManager->redirect();
+		//$loginManager->redirect();
+		redirect("index.php");
 	}
 	
 }
@@ -26,8 +27,5 @@ if ($_POST["submit"] && !$boolLoginOk) {
 }
 
 $tplLogin->display("login.tpl");
-	
-include_once("footer-inc.php");
-new Footer();	
 
 ?>
