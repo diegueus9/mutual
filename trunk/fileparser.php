@@ -1,4 +1,5 @@
 <?php 
+/*CArajo que lo modifique!!!!!!*/
 require("confdatabase.php");
 require_once("miscellaneous.php");
 require("validator.php");
@@ -50,7 +51,7 @@ class FileParser{
 			$arrayData[$numRegistro]["afi_strSegundoApellido"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strPrimerNombre"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strSegundoNombre"] = stripComillas($arrayDataLine[$numCampo++]);
-			$arrayData[$numRegistro]["afi_intEdad"] = stripComillas($arrayDataLine[$numCampo++]);
+			$arrayData[$numRegistro]["afi_dateFechaNacimiento"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strSexo"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strCodTipoAfi2"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strCodParentesco2"] = stripComillas($arrayDataLine[$numCampo++]);
