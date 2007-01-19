@@ -103,7 +103,7 @@ class Validador{
 	}
 	private function esValidoEdad($registro){
 		 
-		if (esFechaValida($registro["afi_intEdad"])){
+		if (esFechaValida($registro["afi_dateFechaNacimiento"])){
 			return true;
 		}
 		else {

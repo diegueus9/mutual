@@ -1,5 +1,4 @@
 <?php 
-/*CArajo que lo modifique!!!!!!*/
 require("confdatabase.php");
 require_once("miscellaneous.php");
 require("validator.php");
