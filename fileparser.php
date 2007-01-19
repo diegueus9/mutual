@@ -17,7 +17,7 @@ class FileParser{
 	function __construct(){
 		$this->validador=new Validador();
 	}
-
+	
 	public function loadFile($arrayFile){
 	
 		$strNombreArchivo = "TEMP.TXT";
@@ -50,7 +50,7 @@ class FileParser{
 			$arrayData[$numRegistro]["afi_strSegundoApellido"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strPrimerNombre"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strSegundoNombre"] = stripComillas($arrayDataLine[$numCampo++]);
-			$arrayData[$numRegistro]["afi_dateFechaNacimiento"] = stripComillas($arrayDataLine[$numCampo++]);
+			$arrayData[$numRegistro]["afi_dateFechaNacimiento"] = arreglarFechaSQL(stripComillas($arrayDataLine[$numCampo++]));
 			$arrayData[$numRegistro]["afi_strSexo"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strCodTipoAfi2"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strCodParentesco2"] = stripComillas($arrayDataLine[$numCampo++]);
@@ -61,10 +61,10 @@ class FileParser{
 			$arrayData[$numRegistro]["afi_strCodDepm"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strCodMunicipio"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strZona"] = stripComillas($arrayDataLine[$numCampo++]);
-			$arrayData[$numRegistro]["afi_dateFecAfiliacionSGSSS"] = stripComillas($arrayDataLine[$numCampo++]);
-			$arrayData[$numRegistro]["afi_dateFecAfiliacionEntidadContratante"] = stripComillas($arrayDataLine[$numCampo++]);
+			$arrayData[$numRegistro]["afi_dateFecAfiliacionSGSSS"] = arreglarFechaSQL(stripComillas($arrayDataLine[$numCampo++]));
+			$arrayData[$numRegistro]["afi_dateFecAfiliacionEntidadContratante"] = arreglarFechaSQL(stripComillas($arrayDataLine[$numCampo++]));
 			$arrayData[$numRegistro]["afi_strNumContratoEnteTerritorial"] = stripComillas($arrayDataLine[$numCampo++]);
-			$arrayData[$numRegistro]["afi_dateFecInicioContratoEnteTerritorial"] = stripComillas($arrayDataLine[$numCampo++]);
+			$arrayData[$numRegistro]["afi_dateFecInicioContratoEnteTerritorial"] = arreglarFechaSQL(stripComillas($arrayDataLine[$numCampo++]));
 			$arrayData[$numRegistro]["afi_strTipoContratoEnteTerritorial"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strPertenenciaEtnica"] = stripComillas($arrayDataLine[$numCampo++]);
 			$arrayData[$numRegistro]["afi_strEstadoAfiliacion"] = stripComillas($arrayDataLine[$numCampo++]);		
