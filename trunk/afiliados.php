@@ -26,7 +26,7 @@ class eAfiliados{
 	public $strSegundoApellido="SEGUNDO_APELLIDO";
 	public $strPrimerNombre="PRIMER_NOMBRE";
 	public $strSegundoNombre="SEGUNDO_NOMBRE";
-	public $intEdad="EDAD";
+	public $dateFechaNacimiento="FECHA_NACIMIENTO";
 	public $strSexo="SEXO";
 	public $strTipoAfiliado="TIPO_AFILIADO";
 	public $strParentescoCabezaFamilia="PARENTESCO_CABEZA_FAMILIA";
