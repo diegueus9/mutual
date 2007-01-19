@@ -22,16 +22,15 @@ function stripComillas($cadena){
 
 function esFechaValida($strFecha){
 	$esValida=true;
-	list( $day,$month, $year) = split('[/.-]', $strFecha);	
+	list( $year, $month,  $day) = split('[/.-]', $strFecha);	
 	if (!(checkdate($month,$day,$year))){
 		$esValida=false;
 	}
-	$today=date("d/m/Y");
-	list( $tday,$tmonth, $tyear) = split('[/.-]', $today);	
+	$today=date("Y/m/d");
+	list( $tyear,$tmonth,$tday ) = split('[/.-]', $today);	
 	$utr=mktime(0,0,0,$month,$day,$year);
 	$utt=mktime(0,0,0,$tmonth,$tday,$tyear);
 	if ($utt-$utr<0){
-		echo $year;
 		$esValida=false;
 	}
 	return $esValida;
@@ -45,5 +44,9 @@ function redirect ($varStrPath){
 		echo "<p>Javascript is disabled in your browser.  <a href='$varStrPath'>Click here</a> to continue.</p>";
 		
 	}
-
+function arreglarFechaSQL($strFecha){
+	list( $day,$month, $year) = split('[/.-]', $strFecha);
+	$fechaArreglada=$year."-".$month."-".$day;
+	return $fechaArreglada;
+}
 ?>
