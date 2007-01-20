@@ -30,6 +30,7 @@ class tAfiliados{
 	public $afi_strSegundoApellido="SEGUNDO_APELLIDO";
 	public $afi_strPrimerNombre="PRIMER_NOMBRE";
 	public $afi_strSegundoNombre="SEGUNDO_NOMBRE";
+	public $afi_intEdad="EDAD";
 	public $afi_dateFechaNacimiento="FECHA_NACIMIENTO";
 	public $afi_strSexo="SEXO";
 	public $afi_strTipoAfiliado="TIPO_AFILIADO";

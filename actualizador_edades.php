@@ -62,6 +62,4 @@ class ActualizadorEdades{
 		
 	}
 }
-$a = new ActualizadorEdades();
-$a->actualizarEdades();
 ?>
