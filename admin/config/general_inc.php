@@ -1,3 +1,3 @@
 <?php
-$strProgramPath='C:\\wamp\\www\\ultima2';
+$strProgramPath='C:\\wamp\\www\\simers';
 ?>
