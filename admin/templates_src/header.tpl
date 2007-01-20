@@ -4,6 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Simers</title>
 <link href="general.css" rel="stylesheet" type="text/css" />
+{if $css != ""}
+<link href="{$css}.css" rel="stylesheet" type="text/css" />
+{/if}
 </head>
 <body>
 <div class="main">	
@@ -13,18 +16,24 @@
 		<div class="menu-head"></div>
 	</div>	
 </div>
-<div class="breadcrum">/inicio</div>
+<div class="breadcrum">/{$appPath}</div>
 <div class="block"><!-- Inicia bloque de operación, cierra en footer.tpl-->
 
 {if $menu == "ok"}
 	<div class="menu-lateral">
 		<div class="menu-box-top"></div>
 		<div class="menu-box-body">
-			<div class="menu-item"><a href="index.php">Inicio</a></div>
-			<div class="menu-item"><a href="selectfile.php">Cargar Archivos</a></div>
-			<div class="menu-item"><a href="#">Base de Datos</a></div>
-			<div class="menu-item"><a href="#">P y P</a></div>
-			<div class="menu-item"><a href="#">Programar Citas</a></div>
+			<div class="menu-item"><a href="mod-affiliated.php">Afiliados</a></div>
+			<div class="menu-item"><a href="#">Programación</a></div>
+			<div class="menu-item"><a href="#">Historia Clinica</a></div>
+			<div class="menu-item"><a href="#">Laboratorio Clinico</a></div>
+			<div class="menu-item"><a href="#">P Y P</a></div>
+			<div class="menu-item"><a href="#">Facturación</a></div>
+			<div class="menu-item"><a href="#">Informes</a></div>
+			<div class="menu-item"><a href="#">Segimiento a Riesgos</a></div>
+			<div class="menu-item"><a href="#">Auditorias</a></div>
+			<div class="menu-item"><a href="#">Gestion Documental</a></div>
+			<div class="menu-item"><a href="#">SIAU</a></div>
 			<div class="menu-item"><a href="logout.php">Salir</a></div>
 		</div>
 		<div class="menu-box-bottom"></div>
