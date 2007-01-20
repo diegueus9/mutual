@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once("admin/inc.php");
 
 if (!$logManager->isLogged()){	
@@ -6,12 +6,13 @@ if (!$logManager->isLogged()){
 }
 
 include_once("header-inc.php");
-new Header("cargar archivo", "selectfile.php");
+new Header("cargar archivo", "mod-affiliated.php");
 
 $tplSelect=new TplLoad;
-$tplSelect->display("selectfile.tpl");
+$tplSelect->display("mod-affiliated.tpl");
 
 include_once("footer-inc.php");
 new Footer();
 
+?>
 ?>

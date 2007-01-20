@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.15, created on 2007-01-16 18:18:04
+<?php /* Smarty version 2.6.15, created on 2007-01-17 11:11:33
          compiled from index.tpl */ ?>
 	<div class="menu-central">
 		<div class="menu-icons">
@@ -65,5 +65,9 @@
 			</div>
 			<div class="menu-footer"></div>
 		</div>
-		<div class="sec-dialogs">dialogos secundarios</div>
+		<div class="help-dialog">
+			<div class="help-top"></div>
+			<div class="help-body"></div>
+			<div class="help-bottom"></div>
+		</div>
 	</div>

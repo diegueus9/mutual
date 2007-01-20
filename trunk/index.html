@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Simers</title>
 <link href="general.css" rel="stylesheet" type="text/css" />
+<link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="main">	
@@ -15,62 +16,21 @@
 </div>
 <div class="breadcrum">/inicio</div>
 <div class="block">
-	<!-- /* Caja de ingreso  */ >
-	<div class="loginface">		
-		<div class="error-msg">Error</div>
-		<div class="loginbox"><form action="login.php" method="post" name="login">
-			<table class="logintable">
-				<tr>
-					<td><div class="label">NOMBRE:</div></td>
-					<td><div class="input-cont"><input class="input-class" type="text" name="username" /></div></td>
-				</tr>
-				<tr>
-					<td><div class="label">PASSWORD:</div></td>
-					<td><div class="input-cont"><input class="input-class" type="password" name="password" /></div></td>
-				</tr>
-				<tr>
-					<td colspan="2"><div class="submit-cont"><input type="submit" name="submit" value="Aceptar" /></div></td>
-				</tr>
-				</table>
-		</form></div>
-	</div>
-	< /*Fin caja ingreso */-->
-	<!--div class="white-space"></div-->
 	<div class="menu-lateral">
-	<!--script language="JavaScript">
-	<!	
-		function changeIt() {
-			if (!document.styleSheets) return;
-			var theRules = new Array();
-			if (document.styleSheets[1].cssRules)
-				theRules = document.styleSheets[1].cssRules
-			else if (document.styleSheets[1].rules)
-				theRules = document.styleSheets[1].rules
-			else return;
-			theRules['submenu-item'].style.display="inline";
-		}
-		function Alternar (){
-			if (sub1.style.display=="none"){
-				sub1.style.display=""
-				sub2.style.display=""
-				sub3.style.display=""
-			}else{
-				sub1.style.display="none"
-				sub2.style.display="none"
-				sub3.style.display="none"
-			}
-		}
-		>
-	</script-->
 		<div class="menu-box-top"></div>
 		<div class="menu-box-body">
-			<div class="menu-item"><a href="#">Cargar Archivos</a></div>
-			<div class="menu-item"><a href="#">Base de Datos</a></div>
-			<div class="menu-item"><a href="#">P y P</a></div>
-			<div class="menu-item"><a href="#">Menu Secundario</a></div>
-			<!--div class="submenu-item" id="sub1"><a href="#">Item 1</a></div>
-			<div class="submenu-item" id="sub2"><a href="#">Item 2</a></div>
-			<div class="submenu-item" id="sub3"><a href="#">Item 3</a></div-->
+			<div class="menu-item"><a href="index.php">Inicio</a></div>
+			<div class="menu-item"><a href="mod-affiliated.php">Afiliados</a></div>
+			<div class="menu-item"><a href="#">Programación</a></div>
+			<div class="menu-item"><a href="#">Historia Clinica</a></div>
+			<div class="menu-item"><a href="#">Laboratorio Clinico</a></div>
+			<div class="menu-item"><a href="#">P Y P</a></div>
+			<div class="menu-item"><a href="#">Facturación</a></div>
+			<div class="menu-item"><a href="#">Informes</a></div>
+			<div class="menu-item"><a href="#">Segimiento a Riesgos</a></div>
+			<div class="menu-item"><a href="#">Auditorias</a></div>
+			<div class="menu-item"><a href="#">Gestion Documental</a></div>
+			<div class="menu-item"><a href="#">SIAU</a></div>
 			<div class="menu-item"><a href="logout.php">Salir</a></div>
 		</div>
 		<div class="menu-box-bottom"></div>
@@ -80,67 +40,95 @@
 			<div class="menu-head"></div>
 			<div class="menu-cont-left">
 				<div class="menu-col-left">
-				  <div class="menu-item-icon">
-				  	<a href="#"><img src="img/uploadfile.gif" height="100" width="100" /></a>
-				  </div>
-				  <div class="menu-item-label">
-				  	<a href="#">Cargar Archivo</a>
-				  </div>
-				  <div class="menu-item-icon">
-				  	<img src="img/buddy-blue2.gif" height="100" width="100" />
-				  </div>
-				  <div class="menu-item-label">
-				  	<a href="#">Usuarios</a>
-				  </div>
+					<div class="menu-item-icon">
+						<a href="mod-affiliated.php"><img src="img/people2.gif" height="100" width="100" /></a>
+					</div>
+					<div class="menu-item-label">
+						<a href="mod-affiliated.php">Afiliados</a>
+					</div>
+					<div class="menu-item-icon">
+						<a href="#"><img src="img/pyp.gif" height="100" width="100" /></a>
+					</div>
+					<div class="menu-item-label">
+						<a href="#">P Y P</a>
+					</div>
+					<div class="menu-item-icon">
+						<a href="#"><img src="img/auditoria.gif" width="100" height="100" /></a>
+					</div>
+					<div class="menu-item-label">
+						<a href="#">Auditorias</a>
+					</div>
 				</div>
 				<div class="menu-col-right">
 					<div class="menu-item-icon">
-				  		<a href="#"><img src="img/buddy-blue2ok.gif" height="100" width="100" /></a>
+				  		<a href="#"><img src="img/shedule.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Verificar Usuario</a>
+						<a href="#">Programación</a>
 					</div>
 					<div class="menu-item-icon">
-						<img src="img/buddy-blue2.gif" height="100" width="100" />
+						<a href="#"><img src="img/registradora.gif" width="100" height="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Usuarios</a>
+						<a href="#">Facturacón</a>
 					</div>
+					<div class="menu-item-icon">
+						<a href="#"><img src="img/gestion.gif" width="100" height="100" /></a>
+					</div>
+					<div class="menu-item-label">
+						<a href="#">Gestion Documantal</a>
+					</div>					
 				</div>
 			</div>
 			<div class="menu-cont-right">
 				<div class="menu-col-left">
 					<div class="menu-item-icon">
-						<a href="#"><img src="img/shedule.gif" width="100" height="100" /></a>
+						<a href="#"><img src="img/historial.gif" width="100" height="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Programar Citas</a>
+						<a href="#">Historia Clínica</a>
 					</div>
 					<div class="menu-item-icon">
-						<img src="img/buddy-blue2.gif" height="100" width="100" />
+						<a href="#"><img src="img/informes.gif" width="100" height="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Usuarios</a>
+						<a href="#">Informes</a>
 					</div>
+					<div class="menu-item-icon">
+						<a href="#"><img src="" width="100" height="100" /></a>
+					</div>
+					<div class="menu-item-label">
+						<a href="#">SIAU</a>
+					</div>	
 				</div>
 				<div class="menu-col-right">
 					<div class="menu-item-icon">
-				  		<img src="img/buddy-blue2.gif" height="100" width="100" />
+				  		<a href="#"><img src="img/lab-clinic.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Usuarios</a>
+						<a href="#">Laboratorio Clínico</a>
 					</div>
 					<div class="menu-item-icon">
-						<img src="img/buddy-blue2.gif" height="100" width="100" />
+				  		<a href="#"><img src="" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Usuarios</a>
+						<a href="#">Seguimiento de Riesgos</a>
 					</div>
+					<div class="menu-item-icon">
+				  		<a href="#"><img src="img/salir.gif" height="100" width="100" /></a>
+					</div>
+					<div class="menu-item-label">
+						<a href="#">Salir</a>
+					</div>					
 				</div>
 			</div>
 			<div class="menu-footer"></div>
 		</div>
-		<div class="sec-dialogs">dialogos secundarios</div>
+		<div class="help-dialog">
+			<div class="help-top"></div>
+			<div class="help-body"></div>
+			<div class="help-bottom"></div>
+		</div>
 	</div>
 </div>
 <div class="white-space"></div>

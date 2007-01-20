@@ -63,5 +63,9 @@
 			</div>
 			<div class="menu-footer"></div>
 		</div>
-		<div class="sec-dialogs">dialogos secundarios</div>
+		<div class="help-dialog">
+			<div class="help-top"></div>
+			<div class="help-body"></div>
+			<div class="help-bottom"></div>
+		</div>
 	</div>

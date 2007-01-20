@@ -5,7 +5,7 @@ class Header{
 	
 	private $strAppPath = "";
 	
-	public function __construct($strAppPath){
+	public function __construct($strAppPath, $strScriptName){
 		
 		global $logManager;
 		
@@ -16,11 +16,13 @@ class Header{
 		}else{
 			
 			if (isset($strAppPath) && $strAppPath != "") {
-				$this->strAppPath = "/".$strAppPath;
+				$this->strAppPath = "/".$strAppPath;				
 				$tplHeader->assign("menu", "ok");
 			}
-			$tplHeader->assign("appPath", "inicio".$this->strAppPath);
-								
+			if (isset($strScriptName) && $strScriptName != "") {
+				$tplHeader->assign("css", ereg_replace(".php", "",$strScriptName));
+			}
+			$tplHeader->assign("appPath", "inicio".$this->strAppPath);								
 		}
 		
 		$tplHeader->display("header.tpl");		

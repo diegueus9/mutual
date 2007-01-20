@@ -6,7 +6,7 @@ include_once("header-inc.php");
 if (!$logManager->isLogged()) {
 	include_once("login.php");
 }else {		
-	new Header("menu principal");
+	new Header("menu principal", "index.php");
 	$tplIndex = new TplLoad();
 	$tplIndex->display("index.tpl");
 }

@@ -19,7 +19,7 @@ if ($_POST["submit"]){
 }
 
 include_once("header-inc.php");
-new Header("");
+new Header("", "");
 	
 $tplLogin = new TplLoad;
 if ($_POST["submit"] && !$boolLoginOk) {		
