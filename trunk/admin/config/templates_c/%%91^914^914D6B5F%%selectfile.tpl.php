@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.15, created on 2007-01-20 18:18:26
+<?php /* Smarty version 2.6.15, created on 2007-01-21 13:06:35
          compiled from selectfile.tpl */ ?>
 	<div class="display-cental">
 		<div class="select">

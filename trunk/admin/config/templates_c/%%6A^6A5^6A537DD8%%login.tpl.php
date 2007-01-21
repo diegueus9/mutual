@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.15, created on 2007-01-10 09:14:17
+<?php /* Smarty version 2.6.15, created on 2007-01-21 13:05:55
          compiled from login.tpl */ ?>
 	<div class="loginface">		
 		<div class="error-msg"><?php echo $this->_tpl_vars['error']; ?>
