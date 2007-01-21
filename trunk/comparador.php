@@ -90,8 +90,8 @@ class Comparador{
 		}
 		$querysql=substr($querysql,0,-2);
 		$querysql.=");";
-		echo $querysql;
-		echo "<br/>";
+		//echo $querysql;
+		//echo "<br/>";
 		mysql_query($querysql) or die("Fallo al ejecutar el INSERT.<br/>". mysql_error());
 		$this->escribirLogNuevoUsuario($usuario);
 	}
@@ -153,7 +153,7 @@ class Comparador{
 			return false;
 		}
 		elseif ($num_rows>1){
-			echo "Existe mas de una coincidencia en la busqueda!!!.";
+			//echo "Existe mas de una coincidencia en la busqueda!!!.";
 			return false;
 		}
 		else{
@@ -170,7 +170,7 @@ class Comparador{
 			return false;
 		}
 		elseif ($num_rows>1){
-			echo "Existe mas de una coincidencia en la busqueda!!!.";
+			//echo "Existe mas de una coincidencia en la busqueda!!!.";
 			return false;
 		}
 		else{
@@ -185,7 +185,7 @@ class Comparador{
 		$resultado=$this->cargarDatos();
 		while ($usuario=mysql_fetch_array($resultado)) {
 			if ($this->estaAfiliadoya($usuario)){
-				echo "";			
+				//echo "";			
 			}
 			else {
 				$this->insertarNuevoUsuario($usuario);
@@ -196,10 +196,10 @@ class Comparador{
 		$resultado=$this->cargarDatos(false);
 		while ($usuario=mysql_fetch_array($resultado)) {
 			if ($this->estaReportado($usuario)){
-				echo "El afiliado fue reportado.<br/>";			
+				//echo "El afiliado fue reportado.<br/>";			
 			}
 			else {
-				echo "suspendiendo...<br/>";
+				//echo "suspendiendo...<br/>";
 				$this->suspenderUsuario($usuario);
 			}
 		}
