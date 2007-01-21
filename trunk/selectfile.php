@@ -6,7 +6,8 @@ if (!$logManager->isLogged()){
 }
 
 include_once("header-inc.php");
-new Header("cargar archivo", "selectfile.php");
+$strModPath = "afiliados/cargar archivo";
+new Header($strModPath, "selectfile.php");
 
 $tplSelect=new TplLoad;
 $tplSelect->display("selectfile.tpl");

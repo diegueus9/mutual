@@ -1,0 +1,40 @@
+.display-cental .select {
+	width: 425px;
+	margin: 0 auto;
+	padding-top: 50px;
+	height: 250px;
+}
+.block .display-cental .select .select-box {
+	height: 250px;
+	width: 425px;
+	/*border: 1px outset #333333;*/
+	padding-top: 40px;
+	background-image: url(img/selectbox.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+.block .display-cental .select .select-box .select-msg {
+	font-size: 13px;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: justify;
+	vertical-align: middle;
+	height: 40px;
+	padding-left: 20px;
+	overflow: hidden;
+	padding-bottom: 20px;
+	padding-right: 20px;
+}
+.block .display-cental .select .select-box .select-form {
+	width: 325px;
+	border: 1px doble #FF0000;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+.block .display-cental .select .select-box .select-form .select-item {
+	height: 40px;
+	text-align: right;
+}
+.block .display-cental .select .select-box .select-form .select-item .input-file {
+	width: 325px;
+}

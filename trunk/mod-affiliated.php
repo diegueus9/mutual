@@ -6,7 +6,7 @@ if (!$logManager->isLogged()){
 }
 
 include_once("header-inc.php");
-new Header("cargar archivo", "mod-affiliated.php");
+new Header("afiliados", "mod-affiliated.php");
 
 $tplSelect=new TplLoad;
 $tplSelect->display("mod-affiliated.tpl");
