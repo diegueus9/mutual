@@ -191,3 +191,11 @@ body {
 	float: right;
 	/*border: 1px dashed #0000FF;*/
 }
+.main .headconteiner .menu-head {
+	clear: left;
+	height: 20px;
+	width: 100px;
+	border: 1px dashed #FF0000;
+	padding-top: 30px;
+	padding-left: 20px;
+}

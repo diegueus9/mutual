@@ -12,8 +12,7 @@
 <div class="main">	
 	<div class="headconteiner">
 		<div class="title"></div>
-		<div class="logo"></div>
-		<div class="menu-head"></div>
+		<div class="logo"></div>		
 	</div>	
 </div>
 <div class="breadcrum">/{$appPath}</div>
