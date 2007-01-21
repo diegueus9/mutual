@@ -186,3 +186,8 @@ body {
 	background-repeat: no-repeat;
 }
 /**/
+.block .display-cental {
+	width: 765px;
+	float: right;
+	/*border: 1px dashed #0000FF;*/
+}

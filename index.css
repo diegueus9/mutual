@@ -124,4 +124,18 @@
 .menu-item-label a:hover{
 	text-decoration: none;
 	color: #7777CC;
+	position: relative;
+	cursor: help;
+}
+.menu-item-label a span{
+	display: none;
+}
+.menu-item-label a:hover span{
+	display: block;
+	position: absolute; top: 10px; left: 0;
+/* formatting only styles */
+	padding: 5px; margin: 10px; z-index: 100;
+	background: #f0f0f0; border: 1px dotted #c0c0c0;
+	opacity: 0.9;
+/* end formatting */
 }
