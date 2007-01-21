@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.15, created on 2007-01-20 12:48:54
+<?php /* Smarty version 2.6.15, created on 2007-01-21 13:06:06
          compiled from index.tpl */ ?>
 <div class="menu-central">
 		<div class="menu-icons">
