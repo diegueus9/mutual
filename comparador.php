@@ -90,8 +90,6 @@ class Comparador{
 		}
 		$querysql=substr($querysql,0,-2);
 		$querysql.=");";
-		//echo $querysql;
-		//echo "<br/>";
 		mysql_query($querysql) or die("Fallo al ejecutar el INSERT.<br/>". mysql_error());
 		$this->escribirLogNuevoUsuario($usuario);
 	}
@@ -196,9 +194,11 @@ class Comparador{
 		$resultado=$this->cargarDatos(false);
 		while ($usuario=mysql_fetch_array($resultado)) {
 			if ($this->estaReportado($usuario)){
+				echo "";			
 				//echo "El afiliado fue reportado.<br/>";			
 			}
 			else {
+				echo "";
 				//echo "suspendiendo...<br/>";
 				$this->suspenderUsuario($usuario);
 			}
@@ -214,6 +214,10 @@ class Comparador{
 		if ($this->tablaisempty()){
 			$sqlquery="INSERT INTO `$TABLEAFILIADOS` SELECT * FROM `$TABLETMP` ;";
 			mysql_query($sqlquery) or die("No pudo copiar la tabla temporal a la de afiliados".mysql_error());
+			$sqlquery2="SELECT * FROM `$TABLEAFILIADOS`;";
+			$resultado=mysql_query($sqlquery2) or die(mysql_error());
+			$num_rows=mysql_num_rows($resultado);
+			$this->canNuevosUsuarios=$num_rows;
 		}
 		else {
 			$this->ejecutarAlgoritmoInsercion();
@@ -230,5 +234,4 @@ class Comparador{
 		return $this->canUsuariosActualizados;
 	}
 }
-
 ?>
