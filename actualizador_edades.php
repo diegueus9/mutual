@@ -56,7 +56,7 @@ class ActualizadorEdades{
 		while ($registro = mysql_fetch_array($resultado)){
 			list( $año,$mes,$dia ) = split('[/.-]', $registro[$FECHANACIMIENTO]);
 			$edad=$this->calcularEdad($año,$mes,$dia);
-			$sqlqueryinsert="UPDATE `$TABLEAFILIADOS` SET `EDAD` = '$edad' WHERE `$TABLEAFILIADOS`.`$IDENUNICO` = '$registro[$IDENUNICO]' ;";
+			$sqlqueryinsert="UPDATE `$TABLEAFILIADOS` SET `$EDAD` = '$edad' WHERE `$TABLEAFILIADOS`.`$IDENUNICO` = '$registro[$IDENUNICO]' ;";
 			mysql_query($sqlqueryinsert) or die("Error al actualizar las edades de los afiliados. ".mysql_error());
 		}
 		
