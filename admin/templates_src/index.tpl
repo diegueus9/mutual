@@ -78,10 +78,10 @@
 						<a href="#">Seguimiento de Riesgos</a>
 					</div>
 					<div class="menu-item-icon">
-				  		<a href="#"><img src="img/salir.gif" height="100" width="100" /></a>
+				  		<a href="logout.php"><img src="img/salir.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Salir</a>
+						<a href="logout.php">Salir</a>
 					</div>					
 				</div>
 			</div>
