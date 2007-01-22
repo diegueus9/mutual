@@ -29,10 +29,10 @@ class Consultor{
 		}
 	
 	}
-	public function getDataUser($docUsuario){
-		global $TABLEAFILIADOS, $NI;
+	public function getDataUser($tipDoc,$docUsuario){
+		global $TABLEAFILIADOS, $NI,$TI;
 		$this->conectar();
-		$sqlquery="SELECT * FROM `$TABLEAFILIADOS` WHERE `$NI`='$docUsuario'";	
+		$sqlquery="SELECT * FROM `$TABLEAFILIADOS` WHERE `$NI`='$docUsuario' AND `$TI`='$tipDoc';";	
 		$resultado=mysql_query($sqlquery) or die("Fallo al buscar los datos del usuario. ".mysql_error());
 		$arrayRes=mysql_fetch_assoc($resultado);
 		return $arrayRes;
