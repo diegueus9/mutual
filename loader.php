@@ -92,8 +92,5 @@ class LoaderDB{
 	}
 }
 
-/*$arreglo=$arrayData;
-$prueba=new LoaderDB($arreglo);
-$prueba->Load();*/
 
 ?>

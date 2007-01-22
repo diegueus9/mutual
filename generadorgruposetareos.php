@@ -45,7 +45,6 @@ class GeneradorGruposEtareos{
 			$resultadoFiltrar=mysql_query($sqlqueryPersonasEntranFiltro) or die("Error al buscar cuantas personas entran en el filtro ".mysql_error());
 			$cantAfiliados=mysql_num_rows($resultadoFiltrar);
 			$sqlqueryInsertarFrecuencia="UPDATE `$TABLAGRUPOSETAREOS` SET `$FREC` = '$cantAfiliados' WHERE `$ID` = $filtro[$ID] ;";
-			echo $sqlqueryInsertarFrecuencia;
 			mysql_query("$sqlqueryInsertarFrecuencia") or die("Error al actualizar las frecuencias de los grupos etareos en la tabla ".mysql_error());
 		}
 	}
@@ -58,10 +57,12 @@ class GeneradorGruposEtareos{
 		while ($registro=mysql_fetch_array($resultado)){
 			$linea=$registro[$DESC].",";
 			$linea=$linea.$registro[$FREC]."\n";
-			echo $linea;
 			fwrite($buffer, $linea);
 		}
 		fclose($buffer) ;
 	}
 }
+$a =new GeneradorGruposEtareos();
+$a->generarGruposEtareos();
+$a->generarReporteGrupos();
 ?>
