@@ -24,10 +24,10 @@
 				</div>
 				<div class="menu-col-right">
 					<div class="menu-item-icon">
-				  		<a href="#"><img src="img/shedule.gif" height="100" width="100" /></a>
+				  		<a href="mod-schedule.php"><img src="img/shedule.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Programación</a>
+						<a href="mod-schedule.php">Programación</a>
 					</div>
 					<div class="menu-item-icon">
 						<a href="#"><img src="img/registradora.gif" width="100" height="100" /></a>

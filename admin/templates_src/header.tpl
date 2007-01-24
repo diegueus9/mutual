@@ -24,7 +24,7 @@
 		<div class="menu-box-body">
 			<div class="menu-item"><a href="index.php">Inicio</a></div>
 			<div class="menu-item"><a href="mod-affiliated.php">Afiliados</a></div>
-			<div class="menu-item"><a href="#">Programación</a></div>
+			<div class="menu-item"><a href="mod-schedule.php">Programación</a></div>
 			<div class="menu-item"><a href="#">Historia Clinica</a></div>
 			<div class="menu-item"><a href="#">Laboratorio Clinico</a></div>
 			<div class="menu-item"><a href="#">P Y P</a></div>
