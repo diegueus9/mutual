@@ -30,10 +30,25 @@ class GeneradorGruposEtareos{
 		}
 	
 	}
+	private function relacionaGruposAfiliados($codgrupo,$codAfiliado){
+		global $TRELACIONAL;
+		global $TABLAGRUPOSETAREOS,$ID;
+		global $TABLEAFILIADOS,$IDENUNICO;
+		
+		while ($afi=mysql_fetch_assoc($codAfiliado)){
+			$sqlquery="INSERT INTO `$TRELACIONAL` (`$IDENUNICO`,`$ID`) VALUES ('$afi[$IDENUNICO]','$codgrupo');";
+			mysql_query($sqlquery) or die("Error al actualizar las relaciones entre afiliados y grupos etareos ".mysql_error());
+		}
+	}
 	public function generarGruposEtareos(){
 		$this->conectar();
 		global $TABLAGRUPOSETAREOS,$VALMIN,$VALMAX,$FREC, $GEN,$EDAD,$SEXO, $ID;
 		global $TABLEAFILIADOS,$IDENUNICO;
+		global $TRELACIONAL;
+		
+		$sqlquery="TRUNCATE TABLE `$TRELACIONAL`";
+		mysql_query($sqlquery) or die("Error al vaciar la tabla que relaciona los grupos etareos con los afiliados. ".mysql_error());
+		
 		$sqlqueryGruposEtareos="SELECT `$ID`,`$VALMIN`,`$VALMAX`,`$GEN` FROM `$TABLAGRUPOSETAREOS` ;";
 		$resultado=mysql_query($sqlqueryGruposEtareos) or die(" Error al sacar las reglas de los grupos etareos ".mysql_error());
 		while ($filtro = mysql_fetch_array ($resultado)){
@@ -44,6 +59,7 @@ class GeneradorGruposEtareos{
 			$sqlqueryPersonasEntranFiltro=$sqlqueryPersonasEntranFiltro." ; ";
 			$resultadoFiltrar=mysql_query($sqlqueryPersonasEntranFiltro) or die("Error al buscar cuantas personas entran en el filtro ".mysql_error());
 			$cantAfiliados=mysql_num_rows($resultadoFiltrar);
+			$this->relacionaGruposAfiliados($filtro[$ID],$resultadoFiltrar);
 			$sqlqueryInsertarFrecuencia="UPDATE `$TABLAGRUPOSETAREOS` SET `$FREC` = '$cantAfiliados' WHERE `$ID` = $filtro[$ID] ;";
 			mysql_query("$sqlqueryInsertarFrecuencia") or die("Error al actualizar las frecuencias de los grupos etareos en la tabla ".mysql_error());
 		}
@@ -61,8 +77,19 @@ class GeneradorGruposEtareos{
 		}
 		fclose($buffer) ;
 	}
+	public function getGruposEtareos(){
+		global $TABLAGRUPOSETAREOS,$FREC,$DESC;
+		$arrayData=null;
+		$cont=0;
+		$this->conectar();
+		$sqlqueryGruposEtareos="SELECT `$DESC`,`$FREC` FROM `$TABLAGRUPOSETAREOS` ;";
+		$resultado=mysql_query($sqlqueryGruposEtareos) or die("Error al sacar los datos de la tabla de grupos etareos ".mysql_error());
+		while ($registro=mysql_fetch_array($resultado)){
+			$arrayData[$cont][$DESC]=$registro[$DESC];
+			$arrayData[$cont][$FREC]=$registro[$FREC];
+			$cont++;
+		}
+		return $arrayData;
+	}
 }
-$a =new GeneradorGruposEtareos();
-$a->generarGruposEtareos();
-$a->generarReporteGrupos();
 ?>
