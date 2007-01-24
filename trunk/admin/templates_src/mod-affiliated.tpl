@@ -18,10 +18,10 @@
 				</div>
 				<div class="menu-col-right">
 					<div class="menu-item-icon">
-				  		<a href="#"><img src="img/buddy-search.gif" height="100" width="100" /></a>
+				  		<a href="usersearch.php"><img src="img/buddy-search.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Consultar Afiliados</a>
+						<a href="usersearch.php">Consultar Afiliados</a>
 					</div>					
 				</div>
 			</div>

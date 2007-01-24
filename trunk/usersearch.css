@@ -15,17 +15,21 @@
 }
 .block .display-cental .consult .consult-top {
 	height: 11px;
-	border: 1px solid #666666;
-	background-color: #CCCCCC;
+	background-image: url(img/consult-box-top.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
 }
 .block .display-cental .consult .consult-body {
 	height: 150px;
-	border: 1px dotted #000000;
+	background-image: url(img/consult-box-body.gif);
+	background-repeat: repeat-y;
+	background-position: center center;
 }
 .block .display-cental .consult .consult-foot {
-	border: 1px solid #666666;
 	height: 11px;
-	background-color: #CCCCCC;
+	background-image: url(img/consult-box-bottom.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
 }
 .block .display-cental .consult .consult-body .cont-item {
 	width: 645px;
@@ -42,4 +46,9 @@
 .block .display-cental .consult .consult-body .cont-item .item-input {
 	float: right;
 	width: 320px;
+}
+.block .display-cental .consult .consult-body .item-blanksp {
+	height: 40px;
+	width: 500px;
+	margin: 0 auto;
 }
