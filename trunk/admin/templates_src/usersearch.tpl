@@ -1,9 +1,10 @@
 	<div class="display-cental">
 		<div class="consult-title">Consultar Afiliados</div>
+		{if $formulario == "ok"}
 		<div class="consult">
 			<div class="consult-top"></div>
 			<div class="consult-body">
-				<form action="" method="post">
+				<form action="usersearch.php" method="post">
 				<div class="cont-item">
 					<div class="item-label">
 						Tipo de Documento
@@ -38,4 +39,7 @@
 			</div>
 			<div class="consult-foot"></div>
 		</div>
+		{else}
+		{$formulario}
+		{/if}		
 	</div>
