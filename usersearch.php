@@ -20,15 +20,21 @@ if ($_POST["submit"]) {
 	$strDoc = $_POST["doc"];
 	$numDocType = (int)($_POST["doc-type"]);
 	$strTypeDoc = $arrayDocType[$numDocType];	
-	$consultor = new Consultor();			
-	print_r($consultor->getDataUser($strTypeDoc, $strDoc));
-	
+	$consultor = new Consultor();
+	$arrayDoc = $consultor->getDataUser($strTypeDoc, $strDoc);
+	if (count($arrayDoc)>1) {
+		$strPhotoFile = "img-files/".$arrayDoc["COD_TIPO_IDENTIFICACION2"].$arrayDoc["NUMERO_IDENTIFICACION"].".gif";	
+		if (file_exists($strPhotoFile)) {
+			$tplUser->assign("photo",$strPhotoFile);
+		}
+		$tplUser->assign("data", $arrayDoc);
+	}else {
+		$tplUser->assign("error", "El usuario no se ha encontrado, por favor verifique sus datos");
+		$tplUser->assign("formulario", "ok");
+		$tplUser->assign("optArray", $arrayDocItem);
+	}
+		
 }else{
-//	include_once("header-inc.php");
-//	$strModPath = "afiliados/consultar afiliado";
-//	new Header($strModPath, "usersearch.php");	
-//	$tplUser=new TplLoad;
-	
 	
 	$numDocType=0;
 	foreach ($arrayDocType as $strDocType){	
@@ -38,10 +44,7 @@ if ($_POST["submit"]) {
 	}
 	$tplUser->assign("formulario", "ok");
 	$tplUser->assign("optArray", $arrayDocItem);
-	$tplUser->display("usersearch.tpl");
 
-//	include_once("footer-inc.php");
-//	new Footer();
 }
 
 $tplUser->display("usersearch.tpl");

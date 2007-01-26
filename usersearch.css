@@ -43,12 +43,39 @@
 	font-size: 14px;
 	text-align: justify;
 }
+.cont-item .item-label img{
+	border: none;
+	padding-bottom: 20px;
+	width: 100px;
+}
+.block .display-cental .consult .consult-body .cont-item .item-label-sh {
+	float: left;
+	width: 310px;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: justify;
+	background-color: #DDDDDD;
+}
 .block .display-cental .consult .consult-body .cont-item .item-input {
 	float: right;
 	width: 320px;
 }
-.block .display-cental .consult .consult-body .item-blanksp {
-	height: 40px;
-	width: 500px;
-	margin: 0 auto;
+.block .display-cental .consult .consult-body .cont-item .item-data {
+	float: right;
+	width: 320px;
+	font-size: 14px;
+	text-align: justify;
+}
+.consult-body .cont-item .item-data .item-data-labels {
+	float: left;
+	width: 155px;
+	font-weight: bold;
+}
+.consult .consult-body .cont-item .item-data .item-data-text {
+	float: right;
+	width: 155px;
+}
+.cont-item span {
+	font-weight: bold;
+	color: #FF0000;
 }

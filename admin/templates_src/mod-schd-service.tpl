@@ -3,33 +3,37 @@
 			<div class="menu-head"></div>
 			<div class="menu-cont-left">
 				<div class="menu-col-left">
-				  <div class="menu-item-icon">				  	
+				  <div class="menu-item-icon">
+				  	<a href="#"><img src="img/servicios.gif" height="100" width="100" /></a>
 				  </div>
-				  <div class="menu-item-label">				  	
+				  <div class="menu-item-label">
+				  	<a href="#">Servicios Prestados</a>
 				  </div>				  
 				</div>
 				<div class="menu-col-right">
 					<div class="menu-item-icon">
-				  		<a href="mod-schd-pyp.php"><img src="img/prog-pyp.gif" height="100" width="100" /></a>
+				  		<a href="#"><img src="img/prog-disp.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="mod-schd-pyp.php">Programación<br /> P Y P</a>
+						<a href="#">Programación de Disponibilidad</a>
 					</div>					
 				</div>
 			</div>
 			<div class="menu-cont-right">
 				<div class="menu-col-left">
 					<div class="menu-item-icon">
-						<a href="mod-schd-service.php"><img src="img/prog-servicios.gif" width="100" height="100" /></a>
+						<a href="#"><img src="img/matriz-imp.gif" width="100" height="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="mod-schd-service.php">Programación de Servicios</a>
+						<a href="#">Matriz</a>
 					</div>					
 				</div>
 				<div class="menu-col-right">
-					<div class="menu-item-icon">				  		
+					<div class="menu-item-icon">
+				  		<a href="#"><img src="img/prog-disp.gif" height="100" width="100" /></a>
 					</div>
-					<div class="menu-item-label">						
+					<div class="menu-item-label">
+						<a href="#">Parametros de Servicios</a>
 					</div>					
 				</div>
 			</div>
@@ -41,6 +45,3 @@
 			<div class="help-bottom"></div>
 		</div>
 	</div>
-	
-	
-	
