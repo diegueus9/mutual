@@ -1,6 +1,7 @@
 <?php
 require("config.php");
 require_once("confdatabase.php");
+require_once("generador_reportes.php");
 /**
  * Este objeto se encarga de hacer las comparaciones necesarias entre la tabla temporal y la de afiliados.
  *
@@ -13,6 +14,7 @@ class Comparador{
 	 */
 	private $myconn;
 	private $logNuevosUsuarios="Temp/logNuevosUsuarios.txt";
+	private $logNuevosUsuariosPDF="Temp/logNuevosUsuarios";
 	private $canNuevosUsuarios=0;
 	private $logUsuariosSuspendidos="Temp/logUsuariosSuspendidos.txt";
 	private $canUsuariosSuspendidos=0;
@@ -217,12 +219,16 @@ class Comparador{
 			$sqlquery2="SELECT * FROM `$TABLEAFILIADOS`;";
 			$resultado=mysql_query($sqlquery2) or die(mysql_error());
 			$num_rows=mysql_num_rows($resultado);
+			while ($res=mysql_fetch_assoc($resultado)){
+				$this->escribirLogNuevoUsuario($res);
+			}
 			$this->canNuevosUsuarios=$num_rows;
 		}
 		else {
 			$this->ejecutarAlgoritmoInsercion();
 			$this->ejecutarAlgoritmoSuspencion();
 		}
+		$this->generarReportesPDF();
 	}
 	public function getCantidadUsuariosNuevos(){
 		return $this->canNuevosUsuarios;
@@ -232,6 +238,10 @@ class Comparador{
 	}
 	public function getCantidadUsuariosActualizados(){
 		return $this->canUsuariosActualizados;
+	}
+	public function generarReportesPDF(){
+		$gPDF=new GeneradorReportePDF();
+		$gPDF->escribirdeArchivo($this->logNuevosUsuariosPDF,$this->logNuevosUsuarios,"Reporte de Usuarios Nuevos");
 	}
 }
 ?>
