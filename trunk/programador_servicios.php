@@ -83,7 +83,4 @@ class ProgramadorServicios{
 		
 	}
 }
-
-$a=new ProgramadorServicios();
-$a->agregarDatos(1,103,2,"2007-02-27","08:00:00","12:00:00");
 ?>

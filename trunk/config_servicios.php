@@ -12,6 +12,7 @@ $DESCCONS="DESC_CONSULTORIO";
 /*************************TABLA DE PROFESIONALES*******************************/
 $TPROF="TPROFESIONAL";
 $NOMBRE="NOMBRE";
+$CODPROF="COD_PROFESIONAL";
 /***********TRABAJAN************/
 $TRABAJAN="TRABAJAN";
 /****************************AGENDA************************************************/
