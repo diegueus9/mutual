@@ -1,6 +1,7 @@
 <?php
 require_once("config.php");
 require_once("config_servicios.php");
+require_once("config_generadormetas.php");
 class GestorCitas{
 	/**
 	 * Esta variable representa la conexi{on con la base de datos.
@@ -56,6 +57,12 @@ class GestorCitas{
 	}
 	public function getProgramasPyP($codafiliado){
 		global $IDENUNICO;
+		$sqlquery="SELECT NOMBRE_PROGRAMA, DETALLE_PROGRAMA, DESCRIPCION_CUPS
+		FROM TAFILIADOS
+		INNER JOIN TACTIVIDAD_PROGRAMAR ON TAFILIADOS.COD_AFILIADO = TACTIVIDAD_PROGRAMAR.COD_AFILIADO
+		INNER JOIN TPROGRAMAS ON TACTIVIDAD_PROGRAMAR.COD_PROGRAMA = TPROGRAMAS.COD_PROGRAMA
+		INNER JOIN TCUPS ON TACTIVIDAD_PROGRAMAR.COD_CUPS = TCUPS.COD_CUPS
+		WHERE =`$IDENUNICO`";
 	}
 }
 ?>
