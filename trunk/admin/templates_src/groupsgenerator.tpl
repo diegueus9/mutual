@@ -56,6 +56,14 @@
 						</div>
 					</div>
 				</div>
+				<div class="cont-item">
+								<div class="item-label-sh">
+									Grupo Etareo
+								</div>
+								<div class="item-data">
+									Cantidad de Afiliados que Pertenecen
+								</div>
+							</div>
 				{foreach key =llave item=registro from=$data}
 					{foreach key=nombre item=meta from=$registro}
 							<div class="cont-item">
