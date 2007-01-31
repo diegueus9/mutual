@@ -85,8 +85,9 @@ class GeneradorGruposEtareos{
 		$sqlqueryGruposEtareos="SELECT `$DESC`,`$FREC` FROM `$TABLAGRUPOSETAREOS` ;";
 		$resultado=mysql_query($sqlqueryGruposEtareos) or die("Error al sacar los datos de la tabla de grupos etareos ".mysql_error());
 		while ($registro=mysql_fetch_array($resultado)){
-			$arrayData[$cont][$DESC]=$registro[$DESC];
-			$arrayData[$cont][$FREC]=$registro[$FREC];
+			/*$arrayData[$cont][$DESC]=$registro[$DESC];
+			$arrayData[$cont][$FREC]=$registro[$FREC];*/
+			$arrayData[$cont][$registro[$DESC]]=$registro[$FREC];
 			$cont++;
 		}
 		return $arrayData;
