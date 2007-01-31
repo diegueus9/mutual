@@ -12,7 +12,7 @@
 				</div>
 				<div class="menu-col-right">
 					<div class="menu-item-icon">
-				  		<a href="#"><img src="img/metas.gif" height="100" width="100" /></a>
+				  		<a href="goalsgenerator.php"><img src="img/metas.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
 						<a href="#">Generar Metas</a>
