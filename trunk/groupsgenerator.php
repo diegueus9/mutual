@@ -19,6 +19,7 @@ if ($_POST["submit"]) {
 	$arrayGroups=$groups->getGruposEtareos();
 	if (count($arrayGroups)>1) {
 		$tplUser->assign("data", $arrayGroups);
+		$tplUser->assign("flag", true);
 	}else {
 		$tplUser->assign("error", "Los grupos etareos no se pudieron generar");
 		$tplUser->assign("formulario", "ok");

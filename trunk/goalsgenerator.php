@@ -13,23 +13,6 @@ new Header($strModPath, "goalsgenerator.php");
 $tplUser=new TplLoad;
 
 if ($_POST["submit"]) {
-	/*
-	$strDoc = $_POST["doc"];
-	$numDocType = (int)($_POST["doc-type"]);
-	$strTypeDoc = $arrayDocType[$numDocType];	
-	$consultor = new Consultor();
-	$arrayDoc = $consultor->getDataUser($strTypeDoc, $strDoc);
-	if (count($arrayDoc)>1) {
-		$strPhotoFile = "img-files/".$arrayDoc["COD_TIPO_IDENTIFICACION2"].$arrayDoc["NUMERO_IDENTIFICACION"].".gif";	
-		if (file_exists($strPhotoFile)) {
-			$tplUser->assign("photo",$strPhotoFile);
-		}
-		$tplUser->assign("data", $arrayDoc);
-	}else {
-		$tplUser->assign("error", "El usuario no se ha encontrado, por favor verifique sus datos");
-		$tplUser->assign("formulario", "ok");
-		$tplUser->assign("optArray", $arrayDocItem);
-	}*/
 	$goalsType = (int)($_POST["goals-type"]);
 	$goalgener=new GeneradorMetas();
 	$goalgener->generarMetas();
@@ -44,7 +27,7 @@ if ($_POST["submit"]) {
 	else {
 		$tplUser->assign("mensaje", "dia");
 	}
-	if (count($arrayGoals)>1) {
+	if (count($arrayGoals)>0) {
 		$tplUser->assign("data", $arrayGoals);
 	}else {
 		$tplUser->assign("error", "Las Metas no se pudieron generar");

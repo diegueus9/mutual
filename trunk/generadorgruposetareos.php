@@ -1,6 +1,7 @@
 <?php
 require_once("config.php");
 require_once("config_gruposetareos.php");
+require_once("actualizador_edades.php");
 class GeneradorGruposEtareos{
 	/**
 	 * Esta variable representa la conexión con la base de datos.
@@ -9,6 +10,10 @@ class GeneradorGruposEtareos{
 	 */
 	private $myconn;
 	private $logGruposEtareos="Temp/logGruposEtareos.txt";
+	function __construct(){
+		$act=new ActualizadorEdades();
+		$act->actualizarEdades();
+	}
 	/**
 	 * Esta funcion se encarga de hacer la conexión con la base de datos.
 	 *
