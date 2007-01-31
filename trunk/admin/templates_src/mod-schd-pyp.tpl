@@ -4,10 +4,10 @@
 			<div class="menu-cont-left">
 				<div class="menu-col-left">
 				  <div class="menu-item-icon">
-				  	<a href="#"><img src="img/gen-group.gif" height="100" width="100" /></a>
+				  	<a href="groupsgenerator.php"><img src="img/gen-group.gif" height="100" width="100" /></a>
 				  </div>
 				  <div class="menu-item-label">
-				  	<a href="#">Generar Grupos Etareos</a>
+				  	<a href="groupsgenerator.php">Generar Grupos Etareos</a>
 				  </div>				  
 				</div>
 				<div class="menu-col-right">
@@ -15,7 +15,7 @@
 				  		<a href="goalsgenerator.php"><img src="img/metas.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Generar Metas</a>
+						<a href="goalsgenerator.php">Generar Metas</a>
 					</div>					
 				</div>
 			</div>

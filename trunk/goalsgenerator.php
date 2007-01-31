@@ -49,7 +49,6 @@ if ($_POST["submit"]) {
 	}else {
 		$tplUser->assign("error", "Las Metas no se pudieron generar");
 		$tplUser->assign("formulario", "ok");
-		$tplUser->assign("optArray", $arrayDocItem);
 	}
 		
 }else{
