@@ -69,6 +69,14 @@
 						</div>
 					</div>
 				</div>
+				<div class="cont-item">
+					<div class="item-label-sh">
+						Nombre de Programa
+					</div>
+					<div class="item-data">
+						Meta
+					</div>
+				</div>
 				{foreach key =llave item=registro from=$data}
 					{foreach key=nombre item=meta from=$registro}
 							<div class="cont-item">
