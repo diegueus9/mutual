@@ -146,7 +146,7 @@ class GeneradorMetas{
 		while ($prog=mysql_fetch_row($lisProgramas)){
 			$this->generarAfiliadosPrograma($prog[0]);
 			$prg=intval($prog[0]);
-			$sqlquery="SELECT `$NOMBRE` , `$DESCCUPS`  , `$PN` , `$SN` , `$PA` , `$SA` , `$DIR` , `$TEL` FROM `$TPROGRAMAS` , `$TCUPS` , `$TABLEAFILIADOS` WHERE `$CODPROGRAMA` =$prg ;";
+			$sqlquery="SELECT `$NOMBRE` , `$DESCCUPS`  , `$PN` , `$SN` , `$PA` , `$SA` , `$DIR` , `$TEL` FROM `$TPROGRAMAS` , `$TCUPS` , `$TABLEAFILIADOS` WHERE `$CODPROGRAMA` =$prg  ORDER BY `$DESCCUPS` ASC;";
 			$resultado=mysql_query($sqlquery) or die("No se pueden generar la lista de afiliados por programa ".mysql_error());
 			while ($res=mysql_fetch_assoc($resultado)){
 				$this->escribirListadoProgramas($res[$NOMBRE],$res[$DESCCUPS].": ".$res[$PN]." ".$res[$SN]." ".$res[$PA]." ".$res[$SA].",".$res[$DIR].",".$res[$TEL]);
@@ -176,7 +176,7 @@ class GeneradorMetas{
 		elseif ($indicador==2) {
 			$valor=288;
 		}
-		$sqlPrograma="SELECT `$NOMBRE`,`$DESC`,`$CODPROGRAMA` FROM `$TPROGRAMAS`;";
+		$sqlPrograma="SELECT `$NOMBRE`,`$DESC`,`$CODPROGRAMA` FROM `$TPROGRAMAS`  ;";
 		$resultado=mysql_query($sqlPrograma) or die("No se pudieron obtener los datos de los programas ".mysql_error());
 		while ($prog=mysql_fetch_assoc($resultado)){
 			/*$arrayData[$cursorArreglo][$NOMBRE]=$prog[$NOMBRE];

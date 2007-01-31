@@ -34,7 +34,7 @@
 .block .display-cental .consult .consult-body .cont-item {
 	width: 645px;
 	margin: 0 auto;
-	padding-top: 40px;
+	padding-top: 10px;
 }
 .block .display-cental .consult .consult-body .cont-item .item-label {
 	float: left;
@@ -43,7 +43,10 @@
 	font-size: 14px;
 	text-align: justify;
 }
-.cont-item .item-label img{
+.block .display-cental .consult .consult-body .cont-item .item-label img{
+	border: none;
+}
+.cont-item .item-label1 img{
 	border: none;
 	padding-bottom: 20px;
 	width: 50px;
@@ -56,6 +59,9 @@
 	text-align: justify;
 	background-color: #DDDDDD;
 }
+.block .display-cental .consult .consult-body .cont-item .item-label-sh img{
+	border: none;
+}
 .block .display-cental .consult .consult-body .cont-item .item-input {
 	float: right;
 	width: 320px;
@@ -65,6 +71,13 @@
 	width: 320px;
 	font-size: 14px;
 	text-align: justify;
+}
+.block .display-cental .consult .consult-body .cont-item .item-data-sh {
+	float: right;
+	width: 320px;
+	font-size: 14px;
+	text-align: justify;
+	background-color: #DDDDDD;
 }
 .consult-body .cont-item .item-data .item-data-labels {
 	float: left;

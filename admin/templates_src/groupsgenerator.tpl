@@ -17,14 +17,6 @@
 					<div class="item-label">
 						<img src='img/alert.gif' width="10" />
 					</div>
-					<!--div class="item-input">
-						<select name="doc-type">
-							<option value="-1">Selecione el tipo de documento</option>
-							{foreach from=$optArray item=option}
-							<option value='{$option.num}'>{$option.item}</option>							
-							{/foreach}
-						</select>
-					</div-->
 				</div>
 				<div class="cont-item">
 					<div class="item-label">
@@ -66,6 +58,16 @@
 							</div>
 				{foreach key =llave item=registro from=$data}
 					{foreach key=nombre item=meta from=$registro}
+						{if $llave%2==0}
+							<div class="cont-item">
+								<div class="item-label">
+									{$nombre}
+								</div>
+								<div class="item-data-sh">
+									{$meta}
+								</div>
+							</div>
+						{else}
 							<div class="cont-item">
 								<div class="item-label-sh">
 									{$nombre}
@@ -74,14 +76,15 @@
 									{$meta}
 								</div>
 							</div>
+						{/if}
 					{/foreach}
 				{/foreach}
 				<div class="cont-item">
 					<div class="item-label-sh">
-						Para ver el reporte de grupos etareos haga click <a href="Temp/logGruposEtareos.txt" >aqui</a>
+						Para ver el reporte de grupos etareos en texto plano haga click en el icono <a href="Temp/logGruposEtareos.txt" ><img src="img/text-ico.gif" /></a>
 					</div>
-					<div class="item-data">
-						
+					<div class="item-data-sh">
+						Para ver el reporte de grupos etareos en pdf haga click en el icono <a href="Temp/logGruposEtareos.pdf" ><img src="img/acrobat_ico.gif" /></a>
 					</div>
 				</div>
 				<div class="cont-item">&nbsp;</div>				

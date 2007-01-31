@@ -14,17 +14,9 @@
 					<div class="item-label">
 						<span>Las Metas aún no se han generado</span>
 					</div>
-					<div class="item-label">
+					<div class="item-label1">
 						<img src='img/alert.gif' width="10" />
 					</div>
-					<!--div class="item-input">
-						<select name="doc-type">
-							<option value="-1">Selecione el tipo de documento</option>
-							{foreach from=$optArray item=option}
-							<option value='{$option.num}'>{$option.item}</option>							
-							{/foreach}
-						</select>
-					</div-->
 				</div>
 				<div class="cont-item">
 					<div class="item-label">
@@ -57,7 +49,7 @@
 			<div class="consult-top"></div>
 			<div class="consult-body">
 				<div class="cont-item">
-					<div class="item-label">
+					<div class="item-label1">
 						<img src='img/metas.gif' />
 					</div>
 					<div class="item-data">
@@ -65,7 +57,7 @@
 						A Realizar en el {$mensaje}
 						</div>
 						<div class="item-data-text">
-						Haga clik en el nombre del programa para ver el listado.
+						Haga clik en el icono correspondiente para ver el listado en pdf o en texto plano.
 						</div>
 					</div>
 				</div>
@@ -79,14 +71,25 @@
 				</div>
 				{foreach key =llave item=registro from=$data}
 					{foreach key=nombre item=meta from=$registro}
+						{if $llave%2==0}
+							<div class="cont-item">
+								<div class="item-label">
+									<a href="Temp/Programas/{$nombre}.pdf" ><img src="img/mini-acrobat_ico.gif"/></a><a href="Temp/Programas/{$nombre}.txt" ><img src="img/mini-text-ico.gif"/></a>{$nombre}
+								</div>
+								<div class="item-data-sh">
+									{$meta}
+								</div>
+							</div>
+						{else}
 							<div class="cont-item">
 								<div class="item-label-sh">
-									<a href="Temp/Programas/{$nombre}.txt" >{$nombre}</a>
+									<a href="Temp/Programas/{$nombre}.pdf" ><img src="img/mini-acrobat_ico.gif"/></a><a href="Temp/Programas/{$nombre}.txt" ><img src="img/mini-text-ico.gif"/></a>{$nombre}
 								</div>
 								<div class="item-data">
 									{$meta}
 								</div>
 							</div>
+						{/if}
 					{/foreach}
 				{/foreach}
 				
