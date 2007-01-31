@@ -179,16 +179,17 @@ class GeneradorMetas{
 		$sqlPrograma="SELECT `$NOMBRE`,`$DESC`,`$CODPROGRAMA` FROM `$TPROGRAMAS`;";
 		$resultado=mysql_query($sqlPrograma) or die("No se pudieron obtener los datos de los programas ".mysql_error());
 		while ($prog=mysql_fetch_assoc($resultado)){
-			$arrayData[$cursorArreglo][$NOMBRE]=$prog[$NOMBRE];
+			/*$arrayData[$cursorArreglo][$NOMBRE]=$prog[$NOMBRE];
 			$arrayData[$cursorArreglo][$DESC]=$prog[$DESC];
-			$arrayData[$cursorArreglo][$AREALIZAR]=floatval($this->getMetaPrograma($prog[$CODPROGRAMA])/$valor);
+			$arrayData[$cursorArreglo][$AREALIZAR]=floatval($this->getMetaPrograma($prog[$CODPROGRAMA])/$valor);*/
+			$arrayData[$cursorArreglo][$prog[$NOMBRE]]=floatval($this->getMetaPrograma($prog[$CODPROGRAMA])/$valor);
 			$cursorArreglo++;
 		}
 		return $arrayData;
 	}
 	
 }
-$a =new GeneradorMetas();
+/*$a =new GeneradorMetas();
 $a->generarMetas();
-$a->generarListasProgramas();
+$a->generarListasProgramas();*/
 ?>
