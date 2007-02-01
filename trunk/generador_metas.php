@@ -1,6 +1,7 @@
 <?php
 require_once("config.php");
 require_once("config_generadormetas.php");
+require_once("generador_reportes.php");
 class GeneradorMetas{
 	/**
 	 * Esta variable representa la conexión con la base de datos.
@@ -8,7 +9,7 @@ class GeneradorMetas{
 	 * @var unknown_type
 	 */
 	private $myconn;
-	private $carpeta="Temp/Programas";
+	private $carpeta="Temp/Programas/";
 	/**
 	 * Esta funcion se encarga de hacer la conexión con la base de datos.
 	 *
@@ -143,6 +144,7 @@ class GeneradorMetas{
 	public function generarListasProgramas(){
 		global $TABLEAFILIADOS,$NOMBRE,$DESCCUPS,$PN,$SN,$PA,$SA,$DIR,$TEL,$TPROGRAMAS,$TCUPS,$CODPROGRAMA;
 		$lisProgramas=$this->getListadoProgramas();
+		$gpdf=new GeneradorReportePDF();
 		while ($prog=mysql_fetch_row($lisProgramas)){
 			$this->generarAfiliadosPrograma($prog[0]);
 			$prg=intval($prog[0]);
@@ -150,8 +152,15 @@ class GeneradorMetas{
 			$resultado=mysql_query($sqlquery) or die("No se pueden generar la lista de afiliados por programa ".mysql_error());
 			while ($res=mysql_fetch_assoc($resultado)){
 				$this->escribirListadoProgramas($res[$NOMBRE],$res[$DESCCUPS].": ".$res[$PN]." ".$res[$SN]." ".$res[$PA]." ".$res[$SA].",".$res[$DIR].",".$res[$TEL]);
+				//$gpdf->escribirdeArchivo($this->carpeta.$res[$NOMBRE],$this->carpeta.$res[$NOMBRE].".txt","Listado de Usuarios habiles para el programa ".$res[$NOMBRE]);
+			}
+			$sqlquery="SELECT `$NOMBRE` FROM `$TPROGRAMAS` WHERE `$CODPROGRAMA` =$prg  ";
+			$resultado=mysql_query($sqlquery) or die("No se pueden generar la lista de afiliados por programa ".mysql_error());
+			while($res=mysql_fetch_assoc($resultado)){
+				$gpdf->escribirdeArchivo($this->carpeta.$res[$NOMBRE],$this->carpeta.$res[$NOMBRE].".txt","Listado de Usuarios habiles para el programa ".$res[$NOMBRE]);
 			}
 		}
+		
 	}
 	/**
 	 * Esta funcion retorna un arreglo con el nombre del programa, la descripcion y la meta.
