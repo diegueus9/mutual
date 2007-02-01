@@ -2,6 +2,7 @@
 require_once("config.php");
 require_once("config_gruposetareos.php");
 require_once("actualizador_edades.php");
+require_once("generador_reportes.php");
 class GeneradorGruposEtareos{
 	/**
 	 * Esta variable representa la conexión con la base de datos.
@@ -10,6 +11,7 @@ class GeneradorGruposEtareos{
 	 */
 	private $myconn;
 	private $logGruposEtareos="Temp/logGruposEtareos.txt";
+	private $logGruposEtareosPDF="Temp/logGruposEtareos";
 	function __construct(){
 		$act=new ActualizadorEdades();
 		$act->actualizarEdades();
@@ -81,6 +83,10 @@ class GeneradorGruposEtareos{
 			fwrite($buffer, $linea);
 		}
 		fclose($buffer) ;
+	}
+	public function generarReporteGruposPDF(){
+		$gpdf=new GeneradorReportePDF();
+		$gpdf->escribirdeArchivo($this->logGruposEtareosPDF,$this->logGruposEtareos,"Reporte de Grupos Etareos");
 	}
 	public function getGruposEtareos(){
 		global $TABLAGRUPOSETAREOS,$FREC,$DESC;

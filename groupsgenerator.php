@@ -16,6 +16,7 @@ if ($_POST["submit"]) {
 	$groups=new GeneradorGruposEtareos();
 	$groups->generarGruposEtareos();
 	$groups->generarReporteGrupos();
+	$groups->generarReporteGruposPDF();
 	$arrayGroups=$groups->getGruposEtareos();
 	if (count($arrayGroups)>1) {
 		$tplUser->assign("data", $arrayGroups);

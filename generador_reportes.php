@@ -5,7 +5,7 @@ class PDF extends FPDF
 {
 	function Header()
 	{
-		$this->Image('img/complete-head.jpg',140,10,60,20);
+		$this->Image('img_pdf/complete-head.jpg',140,10,60,20);
 		//Arial bold 15
 		$this->SetFont('Arial','B',15);
 		//Calculamos ancho y posición del título.
