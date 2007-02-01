@@ -1,0 +1,81 @@
+.block .display-cental .consult {
+	width: 685px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+.block .display-cental .consult-title {
+	font-size: 20px;
+	font-weight: bolder;
+	text-align: right;
+	width: 725px;
+	padding-top: 10px;
+	margin: 0 auto;
+	font-style: oblique;
+	color: #999999;
+}
+.block .display-cental .consult .consult-top {
+	height: 11px;
+	background-image: url(img/consult-box-top.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+.block .display-cental .consult .consult-body {
+	height: 150px;
+	background-image: url(img/consult-box-body.gif);
+	background-repeat: repeat-y;
+	background-position: center center;
+}
+.block .display-cental .consult .consult-foot {
+	height: 11px;
+	background-image: url(img/consult-box-bottom.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.block .display-cental .consult .consult-body .cont-item {
+	width: 645px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+.block .display-cental .consult .consult-body .cont-item .item-label {
+	float: left;
+	width: 310px;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: justify;
+}
+.cont-item .item-label img{
+	border: none;
+	padding-bottom: 20px;
+	width: 100px;
+}
+.block .display-cental .consult .consult-body .cont-item .item-label-sh {
+	float: left;
+	width: 310px;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: justify;
+	background-color: #DDDDDD;
+}
+.block .display-cental .consult .consult-body .cont-item .item-input {
+	float: right;
+	width: 320px;
+}
+.block .display-cental .consult .consult-body .cont-item .item-data {
+	float: right;
+	width: 320px;
+	font-size: 14px;
+	text-align: justify;
+}
+.consult-body .cont-item .item-data .item-data-labels {
+	float: left;
+	width: 155px;
+	font-weight: bold;
+}
+.consult .consult-body .cont-item .item-data .item-data-text {
+	float: right;
+	width: 155px;
+}
+.cont-item span {
+	font-weight: bold;
+	color: #FF0000;
+}
