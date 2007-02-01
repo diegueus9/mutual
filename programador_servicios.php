@@ -39,7 +39,7 @@ class ProgramadorServicios{
 		while ($servicio=mysql_fetch_assoc($resultado)){
 			$res[$cont]=$servicio;
 			$cont++;
-		}
+		}		
 		return $res;
 	}
 	public function getUnidadAtencion(){
