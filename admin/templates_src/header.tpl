@@ -7,6 +7,12 @@
 {if $css != ""}
 <link href="{$css}.css" rel="stylesheet" type="text/css" />
 {/if}
+{if $cal == "ok"}
+<link rel="stylesheet" type="text/css" media="all" href="jscripts/jscalendar-1.0/skins/aqua/theme.css" />
+<script type="text/javascript" src="jscripts/jscalendar-1.0/calendar.js"></script>
+<script type="text/javascript" src="jscripts/jscalendar-1.0/calendar-setup.js"></script>
+<script type="text/javascript" src="jscripts/jscalendar-1.0/lang/calendar-sp.js"></script>
+{/if}
 </head>
 <body>
 <div class="main">	
