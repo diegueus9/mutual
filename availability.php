@@ -21,17 +21,19 @@ if ($_POST["submit"]) {
 	$strUnAtencion = $_POST["atencion"];
 	$strProfecional = $_POST["profecional"];
 	$strFecha = $_POST["fecha"];
-	$StrHoraInicial = $_POST["inicial"];
-	$strHorafinal = $_POST["final"];
+	$StrHoraInicial = getStrTime(intval($_POST["hora-ini"]), intval($_POST["min-ini"]), $_POST["jornada-ini"]);	
+	$strHorafinal = getStrTime(intval($_POST["hora-fin"]), intval($_POST["min-fin"]), $_POST["jornada-fin"]);
 	
-	$prgSevice->agregarDatos($strServicio, $strUnAtencion, $strProfecional, $strFecha, $StrHoraInicial, $strHorafinal);	
-		
+	$prgSevice->agregarDatos($strServicio, $strUnAtencion, $strProfecional, $strFecha, $StrHoraInicial, $strHorafinal);		
 }
 
 $tplAvlt->assign("servicios", $prgSevice->getServicios());
 $tplAvlt->assign("atencion", $prgSevice->getUnidadAtencion());
 $tplAvlt->assign("profecional", $prgSevice->getProfesionales());
+$tplAvlt->assign("horas", getNumberArray(1,12));
+$tplAvlt->assign("min", getNumberArray(0,59));
 $tplAvlt->assign("matriz", $mtrProg->getMatriz());
+print_r($mtrProg->getMatriz());
 
 $tplAvlt->display("availability.tpl");
 
