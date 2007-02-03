@@ -43,10 +43,46 @@ function redirect ($varStrPath){
 		echo "</script>";
 		echo "<p>Javascript is disabled in your browser.  <a href='$varStrPath'>Click here</a> to continue.</p>";
 		
-	}
+}
+	
 function arreglarFechaSQL($strFecha){
 	list( $day,$month, $year) = split('[/.-]', $strFecha);
 	$fechaArreglada=$year."-".$month."-".$day;
 	return $fechaArreglada;
 }
+
+function getNumberArray($numInicial, $numFinal, $boolWhitLZeros = true){
+	
+	for ($i=$numInicial; $i <= $numFinal; $i++){		
+		$arrayRes[$i] = ( $i < 10 && $boolWhitLZeros )? "0".strval($i) : strval($i);
+	}
+	return $arrayRes;
+}
+
+function getStrTime($hora, $min, $jornada){
+	
+	if ($jornada == "PM" && $hora != 12){
+		$hora = $hora + 12;
+	}elseif ($hora == 12 && $jornada == "AM"){
+		$hora = 0;
+	}
+	
+	if ($hora < 10) {
+		$strRes = "0".strval($hora);
+	}else{
+		$strRes = strval($hora);
+	}
+	
+	$strRes .= ":";
+	
+	if ($min < 10) {
+		$strRes .= "0".strval($min);
+	}else{
+		$strRes .= strval($min);
+	}
+	
+	return $strRes;
+	
+}
+
 ?>
