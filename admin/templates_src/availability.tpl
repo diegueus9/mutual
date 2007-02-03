@@ -14,7 +14,7 @@
 						Servicio:
 					</div>
 					<div class="item-input">
-						<select name="doc-type">
+						<select name="servicio">
 							<option value="-1">Selecione el tipo de servicio</option>
 							{foreach item=item from=$servicios}
 							<option value='{$item.COD_SERVICIO}'>{$item.DESC_SERVICIO}</option>							
@@ -27,7 +27,7 @@
 						Unidad de Atención:
 					</div>
 					<div class="item-input">
-						<select name="doc-type">
+						<select name="atencion">
 							<option value="-1">Selecione la unidad de atención</option>
 							{foreach item=item from=$atencion}
 							<option value='{$item.COD_CONSULTORIO}'>{$item.DESC_CONSULTORIO}</option>							
@@ -40,7 +40,7 @@
 						Profesional:
 					</div>
 					<div class="item-input">
-						<select name="doc-type">
+						<select name="profecional">
 							<option value="-1">Selecione Profesional</option>
 							{foreach item=item from=$profecional}
 							<option value='{$item.COD_PROFESIONAL}'>{$item.NOMBRE}</option>						
@@ -53,7 +53,7 @@
 						Fecha:
 					</div>
 					<div class="item-input">
-						<input type="text" id="fecha" />
+						<input type="text" id="fecha" name="fecha"/>
 						<button type="submit" id="button">...</button>
 						{literal}
 						<script type="text/javascript">
@@ -72,14 +72,18 @@
 					</div>
 					<div class="item-input">
 						<select name="hora-ini">
-							<option>12</option>
+							{foreach key=key item=item from=$horas}
+							<option value="{$key}">{$item}</option>
+							{/foreach}
 						</select> :
 						<select name="min-ini">
-							<option>00</option>
+							{foreach key=key item=item from=$min}
+							<option value="{$key}">{$item}</option>
+							{/foreach}
 						</select> -
 						<select name="jornada-ini">
-							<option>AM</option>
-							<option>PM</option>
+							<option value="AM">AM</option>
+							<option value="PM">PM</option>
 						</select>
 					</div>
 				</div>
@@ -88,15 +92,19 @@
 						Hora de Finalización:
 					</div>
 					<div class="item-input">
-						<select name="hora-ini">
-							<option>12</option>
+						<select name="hora-fin">
+							{foreach key=key item=item from=$horas}
+							<option value="{$key}">{$item}</option>
+							{/foreach}
 						</select> :
-						<select name="min-ini">
-							<option>00</option>
+						<select name="min-fin">
+							{foreach key=key item=item from=$min}
+							<option value="{$key}">{$item}</option>
+							{/foreach}
 						</select> -
-						<select name="jornada-ini">
-							<option>AM</option>
-							<option>PM</option>
+						<select name="jornada-fin">
+							<option value="AM">AM</option>
+							<option value="PM">PM</option>
 						</select>
 					</div>
 				</div>
@@ -105,7 +113,7 @@
 						&nbsp;
 					</div>
 					<div class="item-input">
-						<input name="submit" type="submit" value="Consultar" />
+						<input name="submit" type="submit" value="Insertar" />
 					</div>
 				</div>
 				<div class="cont-item">&nbsp;</div>				
