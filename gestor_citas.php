@@ -30,7 +30,7 @@ class GestorCitas{
 		}
 	
 	}
-	public function get
+	//public function get
 	public function getServicios(){
 		global $TSERVICIO,$DESCSERVICIO,$CODSERVICIO;
 		$cont=0;
@@ -57,12 +57,20 @@ class GestorCitas{
 	}
 	public function getProgramasPyP($codafiliado){
 		global $IDENUNICO;
-		$sqlquery="SELECT NOMBRE_PROGRAMA, DETALLE_PROGRAMA, DESCRIPCION_CUPS
+		$sqlquery="SELECT COD_AFILIADO,NOMBRE_PROGRAMA, DETALLE_PROGRAMA, DESCRIPCION_CUPS
 		FROM TAFILIADOS
 		INNER JOIN TACTIVIDAD_PROGRAMAR ON TAFILIADOS.COD_AFILIADO = TACTIVIDAD_PROGRAMAR.COD_AFILIADO
 		INNER JOIN TPROGRAMAS ON TACTIVIDAD_PROGRAMAR.COD_PROGRAMA = TPROGRAMAS.COD_PROGRAMA
 		INNER JOIN TCUPS ON TACTIVIDAD_PROGRAMAR.COD_CUPS = TCUPS.COD_CUPS
-		WHERE =`$IDENUNICO`";
+		WHERE TAFILIADOS.COD_AFILIADO = $codafiliado ; ";
+		$this->conectar();
+		
+		$resultado=mysql_query($sqlquery) or die(mysql_error());
+		while ($res=mysql_fetch_assoc($resultado)){
+			print_r($res);
+		}
 	}
 }
+$a=new GestorCitas();
+print_r($a->getProgramasPyP("3238099"));
 ?>

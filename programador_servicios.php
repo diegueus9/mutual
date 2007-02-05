@@ -67,13 +67,14 @@ class ProgramadorServicios{
 		return $res;
 	}
 	public function agregarDatos($servicio,$unidadatencion,$profesional,$fechatencion,$horainicio,$horafin){
+		global $TPROF;
 		global $TSERVICIO,$CODSERVICIO,$CODPROFESIONAL;	
 		global $TRABAJAN,$CODPROFESIONAL,$CODCONS;
 		global $TAGENDA,$DIA,$HINICIO,$HFIN;
 		$this->conectar();
 		$codprof=intval($profesional);
 		$codser=intval($servicio);
-		$sqlquery="UPDATE `$TSERVICIO` SET `$CODPROFESIONAL` = $codprof WHERE `$CODSERVICIO` = $codser;";
+		$sqlquery="UPDATE `$TPROF` SET `$CODSERVICIO` = $codser WHERE `$CODPROFESIONAL` = $codprof;";
 		mysql_query($sqlquery) or die("Error al actualizar la tabla ".$TSERVICIO." ".mysql_error());
 		$sqlquery="INSERT INTO `$TRABAJAN` (`$CODPROFESIONAL`,`$CODCONS`) VALUES ($codprof,$unidadatencion);";
 		mysql_query($sqlquery) /*or die("Error al relacionar a los profesionales con los consultorios ".mysql_error())*/;
