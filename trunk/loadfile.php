@@ -20,6 +20,7 @@ $strModPath = "afiliados/cargar archivo/ver resultados";
 new Header($strModPath, "loadfile.php");
 
 
+echo "<!-- ";
 $tplLoadFile=new TplLoad;
 
 if (isset($_FILES["userfile"])) {
@@ -39,7 +40,7 @@ if (isset($_FILES["userfile"])) {
 	$tplLoadFile->assign("suspendUsers", $comp->getCantidadUsuariosSuspendidos());	
 
 }
-
+echo "--> ";
 $tplLoadFile->display("loadfile.tpl");
 
 include_once("footer-inc.php");
