@@ -33,6 +33,7 @@ $tplAvlt->assign("profecional", $prgSevice->getProfesionales());
 $tplAvlt->assign("horas", getNumberArray(1,12));
 $tplAvlt->assign("min", getNumberArray(0,59));
 $tplAvlt->assign("matriz", $mtrProg->getMatriz());
+echo "<br><br><br>";
 print_r($mtrProg->getMatriz());
 
 $tplAvlt->display("availability.tpl");

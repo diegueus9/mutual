@@ -133,13 +133,14 @@
 				<tr>
 					<td>{$fecha}</td>
 					{foreach item=consultorio from=$atencion}
+						<td>
 						{foreach key=strconsultorio item=contenido from=$array_consult}					
 							{if $consultorio.DESC_CONSULTORIO == $strconsultorio}
-								<td>{$contenido.NOMBRE}</td>
-							{else}
-								<td>--</td>
+								{$contenido.NOMBRE}
 							{/if}
 						{/foreach}
+						&nbsp;
+						</td>
 					{/foreach}
 				</tr>				
 				{/foreach}
