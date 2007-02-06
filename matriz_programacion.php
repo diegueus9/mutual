@@ -42,7 +42,7 @@ class MatrizProgramacion{
 		while ($reg=mysql_fetch_assoc($resultado)){
 			$this->matriz[$reg[$DIA]][$reg[$DESCCONS]]=Array($NOMBRE => $reg[$NOMBRE],$HINICIO=>$reg[$HINICIO],$HFIN=>$reg[$HFIN]);
 		}
-		
+		echo $sqlquery;
 	}
 	public function getMatriz(){
 		$this->actualizarMatriz();
