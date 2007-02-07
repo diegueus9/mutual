@@ -72,7 +72,7 @@
 						<a href="#">Laboratorio Clínico</a>
 					</div>
 					<div class="menu-item-icon">
-				  		<a href="#"><img src="img/no-icon.gif" height="100" width="100" /></a>
+				  		<a href="#"><img src="img/riesgos.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
 						<a href="#">Seguimiento de Riesgos</a>
