@@ -10,7 +10,7 @@ body {
 	width: 970px;
 	height: 200px;
 	/*margin: 0 auto;*/
-	background-image: url(img/head-background.gif);
+	background-image: url(img/head-background2.png);
 }
 .main .headconteiner {
 	background-repeat: no-repeat;
@@ -19,7 +19,7 @@ body {
 .main .headconteiner .title {
 	float: left;
 	width: 670px;
-	background-image: url(img/titulo.gif);
+	background-image: url(img/titulo);
 	background-position: right bottom;
 	height: 138px;
 	background-repeat: no-repeat;
@@ -27,7 +27,7 @@ body {
 .main .headconteiner .logo {
 	width: 250px;
 	float: right;
-	background-image: url(img/medicina2.gif);
+	background-image: url(img/medicina2);
 	height: 200px;
 	background-position: center center;
 	background-repeat: no-repeat;	
@@ -122,10 +122,12 @@ body {
 	font-size: 11px;
 }
 .block .menu-lateral .menu-box-body {
+	/* comentado por incongruencias con el diseño
 	background-image: url(img/menu-box-body.gif);
 	background-repeat: repeat-y;
 	background-position: center center;
 	padding-left: 20px;
+	*/
 	padding-top: 10px;
 }
 .block .menu-lateral .menu-box-bottom {
@@ -136,9 +138,14 @@ body {
 }
 .block .menu-lateral .menu-box-body .menu-item {
 	font-weight: bold;
-	height: 25px;
+	height: 23px;
 	font-size: 13px;
 	vertical-align: middle;
+	background-image: url(img/boton-menu.gif);
+	background-repeat: no-repeat;
+	background-position: top center;
+	padding-left: 10px;
+	padding-top: 2px;
 }
 .block .menu-lateral .menu-box-body .menu-item span{
 	color: #000077;
@@ -158,7 +165,7 @@ body {
 	padding-left: 25px;
 }
 .block .menu-lateral .menu-box-body .menu-item a:hover{
-	color: #3333CC;
+	color: #5511CC;
 	text-decoration: none;
 	padding-left: 25px;
 	background-image: url(img/row-bull.gif);
@@ -194,8 +201,21 @@ body {
 .main .headconteiner .menu-head {
 	clear: left;
 	height: 20px;
-	width: 100px;
-	border: 1px dashed #FF0000;
+	/*border: 1px dashed #FF0000;*/
 	padding-top: 30px;
 	padding-left: 20px;
+}.main .headconteiner .menu-head ul {	
+	position: absolute;
+	margin: 0 auto;
+}
+.main .headconteiner .menu-head ul li {
+	list-style: none;
+	display: inline;
+}
+.main .headconteiner .menu-head ul li a{
+	padding: 2px;
+	font-size: 14px;
+	font-weight: bold;
+	color:#FFFFFF;
+	text-decoration: none;
 }
