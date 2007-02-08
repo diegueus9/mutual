@@ -18,7 +18,15 @@
 <div class="main">	
 	<div class="headconteiner">
 		<div class="title"></div>
-		<div class="logo"></div>		
+		<div class="logo"></div>
+		<div class="menu-head">
+			<ul>
+				<li><a href="index.php">Principal</a></li>
+				<li><a href="../index.html">Nuestra Organización</a></li>
+				<li><a href="#">Novedades</a></li>
+				<li><a href="#">Preguntas Frecuentes</a></li>
+			</ul>
+		</div>		
 	</div>	
 </div>
 <div class="breadcrum">/{$appPath}</div>
@@ -26,7 +34,7 @@
 
 {if $menu == "ok"}
 	<div class="menu-lateral">
-		<div class="menu-box-top"></div>
+		<!--div class="menu-box-top"></div-->
 		<div class="menu-box-body">
 			<div class="menu-item"><a href="index.php">Inicio</a></div>
 			<div class="menu-item"><a href="mod-affiliated.php">Afiliados</a></div>
@@ -40,8 +48,9 @@
 			<div class="menu-item"><a href="#">Auditorias</a></div>
 			<div class="menu-item"><a href="#">Gestion Documental</a></div>
 			<div class="menu-item"><a href="#">SIAU</a></div>
+			<div class="menu-item"><a href="#">Administración</a></div>
 			<div class="menu-item"><a href="logout.php">Salir</a></div>
 		</div>
-		<div class="menu-box-bottom"></div>
+		<!--div class="menu-box-bottom"></div-->
 	</div>
 {/if}

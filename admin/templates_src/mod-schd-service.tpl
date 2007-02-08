@@ -15,7 +15,7 @@
 				  		<a href="#"><img src="img/prog-disp.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
-						<a href="#">Programación de Disponibilidad</a>
+						<a href="availability.php">Programación de Disponibilidad</a>
 					</div>					
 				</div>
 			</div>
@@ -30,7 +30,7 @@
 				</div>
 				<div class="menu-col-right">
 					<div class="menu-item-icon">
-				  		<a href="#"><img src="img/prog-disp.gif" height="100" width="100" /></a>
+				  		<a href="#"><img src="img/pref-servicios.gif" height="100" width="100" /></a>
 					</div>
 					<div class="menu-item-label">
 						<a href="#">Parametros de Servicios</a>

@@ -219,3 +219,32 @@ body {
 	color:#FFFFFF;
 	text-decoration: none;
 }
+.block .portada {
+	background-image: url(../imagenes/portada.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 600px;
+}
+.block .portada .central-block {
+	height: 550px;
+	width: 450px;
+	/*border: 1px dotted #FF0000;*/
+	margin: 0 auto;
+	padding-top: 50px;
+}
+.block .portada .central-block .primary-credencial {
+	height: 250px;
+	background-image: url(../imagenes/credencial.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.block .portada .central-block .sec-credencial-left {
+	float: left;
+	height: 300px;
+	width: 145px;
+}
+.block .portada .central-block .sec-credencial-right {
+	float: right;
+	height: 300px;
+	width: 145px;
+}
