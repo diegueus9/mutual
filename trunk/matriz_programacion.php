@@ -37,12 +37,19 @@ class MatrizProgramacion{
 		global $TRABAJAN;
 		global $TAGENDA,$DIA,$HINICIO,$HFIN;
 		$this->conectar();
-		$sqlquery="SELECT `$DIA` , `$HINICIO` , `$HFIN` , `$NOMBRE` , `$DESCCONS` FROM `$TAGENDA` INNER JOIN ( `$TPROF` INNER JOIN ( `$TRABAJAN` INNER JOIN `$TUA` ON `$TRABAJAN`.`$CODCONS` = `$TUA`.`$CODCONS` ) ON `$TPROF`.`$CODPROF` = `$TRABAJAN`.`$CODPROF` ) ON `$TAGENDA`.`$CODPROF` = `$TPROF`.`$CODPROF` ;";
+		//$sqlquery="SELECT `$DIA` , `$HINICIO` , `$HFIN` , `$NOMBRE` , `$DESCCONS` FROM `$TAGENDA` INNER JOIN ( `$TPROF` INNER JOIN ( `$TRABAJAN` INNER JOIN `$TUA` ON `$TRABAJAN`.`$CODCONS` = `$TUA`.`$CODCONS` ) ON `$TPROF`.`$CODPROF` = `$TRABAJAN`.`$CODPROF` ) ON `$TAGENDA`.`$CODPROF` = `$TPROF`.`$CODPROF` ;";
+		$sqlquery="SELECT TAGENDA.DIA_AGENDA, TAGENDA.HORA_INICIO_AGENDA, TAGENDA.HORA_FIN_AGENDA, TPROFESIONAL.NOMBRE, TUNIDAD_DE_ATENCION.DESC_CONSULTORIO
+		FROM TAGENDA
+		INNER JOIN TPROFESIONAL ON TAGENDA.COD_PROFESIONAL = TPROFESIONAL.COD_PROFESIONAL
+		INNER JOIN TRABAJAN ON TPROFESIONAL.COD_PROFESIONAL = TRABAJAN.COD_PROFESIONAL
+		INNER JOIN TUNIDAD_DE_ATENCION ON TRABAJAN.COD_CONSULTORIO = TUNIDAD_DE_ATENCION.COD_CONSULTORIO
+		WHERE 1 
+		ORDER BY TAGENDA.DIA_AGENDA;";
 		$resultado=mysql_query($sqlquery) or die ("Error al sacar la matriz de programacion de la base de datos ".mysql_error());
 		while ($reg=mysql_fetch_assoc($resultado)){
 			$this->matriz[$reg[$DIA]][$reg[$DESCCONS]]=Array($NOMBRE => $reg[$NOMBRE],$HINICIO=>$reg[$HINICIO],$HFIN=>$reg[$HFIN]);
 		}
-		echo $sqlquery;
+		//echo $sqlquery;
 	}
 	public function getMatriz(){
 		$this->actualizarMatriz();
