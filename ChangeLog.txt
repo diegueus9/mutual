@@ -1,0 +1,3 @@
+* Modelo ER preliminar
+* Modulo de Asignacion de Citas
+* Modulo de Programacion de Servicios

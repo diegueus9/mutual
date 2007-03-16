@@ -1,0 +1,10 @@
+* Sistema de archivos por modulos.
+* Nuevo modelo ER
+* Notación para codificación
+* Traduccion del Código al Ingles
+* Documentacion del Código en Español.
+* Clases Debug y Error
+* Interfaces de parametrizacion
+* Instalador de la aplicacion
+* Modulo de Contratacion y Realizacion de Consultas
+* Generador de PDF
