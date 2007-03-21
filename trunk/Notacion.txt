@@ -1,0 +1,8 @@
+entero                                                      -> int_
+cadena                                                      -> str_
+fecha                                                       -> date_
+respuesta de un sql query                                   -> sqlr_
+arreglo                                                     -> array_
+flag                                                        -> f_
+boolean                                                     -> bool_
+archivo                                                     -> file_
