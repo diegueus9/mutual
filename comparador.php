@@ -6,24 +6,34 @@ require_once("generador_reportes.php");
  * Este objeto se encarga de hacer las comparaciones necesarias entre la tabla temporal y la de afiliados.
  *
  */
-class Comparador{
+class Comparator{
 	/**
 	 * Esta variable representa la conexi{on con la base de datos.
 	 *
 	 * @var ResourceConnection
 	 */
 	private $myconn;
-	private $logNuevosUsuarios="Temp/logNuevosUsuarios.txt";
-	private $logNuevosUsuariosPDF="Temp/logNuevosUsuarios";
-	private $canNuevosUsuarios=0;
-	private $logUsuariosSuspendidos="Temp/logUsuariosSuspendidos.txt";
-	private $canUsuariosSuspendidos=0;
-	private $canUsuariosActualizados=0;
+	/**
+	 * Nombre del Archivo donde se guardará el registro de los nuevos usuarios.
+	 *
+	 * @var unknown_type
+	 */
+	private $file_logNewUsers="Temp/logNuevosUsuarios.txt";
+	/**
+	 * Nombre del archivo del Reporte en pdf de los nuevos usuarios.
+	 *
+	 * @var unknown_type
+	 */
+	private $file_logNewUsersPDF="Temp/logNuevosUsuarios";
+	private $int_numNewUsers=0;
+	private $file_SuspendedUsers="Temp/logUsuariosSuspendidos.txt";
+	private $int_numSuspendedUsers=0;
+	private $int_numUpdatedUsers=0;
 	/**
 	 * Realiza la conexion a la base de datos.
 	 *
 	 */
-	private function conectar(){
+	private function conect(){
 		global $HOST;
 		global $BASEDEDATOS;
 		global $USUARIO;
@@ -45,12 +55,12 @@ class Comparador{
 	 *
 	 * @return bool
 	 */
-	private function tablaisempty(){
+	private function tableIsEmpty(){
 		global $TABLEAFILIADOS;
 		$sqlquery="SELECT * from `$TABLEAFILIADOS`;";
 		$result=mysql_query($sqlquery);
-		$num_rows = mysql_num_rows($result);
-		if ($num_rows==0){			
+		$int_numRows = mysql_num_rows($result);
+		if ($int_numRows==0){			
 			return true;			
 		}
 		else {
@@ -62,97 +72,97 @@ class Comparador{
 	 * 
 	 * @return unknown
 	 */
-	private function cargarDatos($fTmp=true){
+	private function loadData($f_bool_Tmp=true){
 		global $TABLETMP,$TABLEAFILIADOS;
-		if ($fTmp){
+		if ($f_bool_Tmp){
 			$sqlquery="SELECT * FROM `$TABLETMP`; ";
 		}
 		else {
 			$sqlquery="SELECT * FROM `$TABLEAFILIADOS`; ";
 		}
-		$resultado=mysql_query($sqlquery) or die("Error al sacar los datos de la tabla. ".mysql_error());
-		return $resultado;
+		$sqlr_result=mysql_query($sqlquery) or die("Error al sacar los datos de la tabla. ".mysql_error());
+		return $sqlr_result;
 	}
 	/**
 	 * Esta funcion se encarga de insertar un nuevo afiliado.
 	 *
-	 * @param $Array $usuario
+	 * @param $Array $array_User
 	 */
-	private function insertarNuevoUsuario($usuario){
+	private function insertNewUser($array_User){
 		global $TABLEAFILIADOS;
 		$variables=get_class_vars("tAfiliados");
 		$querysql="INSERT INTO `$TABLEAFILIADOS` (";
-		foreach ($variables as $campo){
-			$querysql.="`$campo`, ";
+		foreach ($variables as $field){
+			$querysql.="`$field`, ";
 		}
 		$querysql=substr($querysql,0,-2);
 		$querysql.=") VALUES ( ";
-		foreach ($variables as $campo){
-			$querysql.="'$usuario[$campo]', ";
+		foreach ($variables as $field){
+			$querysql.="'$array_User[$field]', ";
 		}
 		$querysql=substr($querysql,0,-2);
 		$querysql.=");";
 		mysql_query($querysql) or die("Fallo al ejecutar el INSERT.<br/>". mysql_error());
-		$this->escribirLogNuevoUsuario($usuario);
+		$this->writeLogNewUser($array_User);
 	}
-	private function suspenderUsuario($usuario){
+	private function suspendUser($array_User){
 		global $TABLEAFILIADOS,$IDENUNICO,$ESTADOAFILIACION;
-		$sqlquery="UPDATE `$TABLEAFILIADOS` SET `$ESTADOAFILIACION` = 'su' WHERE `$IDENUNICO` = '$usuario[$IDENUNICO]' ;";
+		$sqlquery="UPDATE `$TABLEAFILIADOS` SET `$ESTADOAFILIACION` = 'su' WHERE `$IDENUNICO` = '$array_User[$IDENUNICO]' ;";
 		mysql_query($sqlquery) or die("Fallo al cambiar estado de afiliacion.".mysql_error());
-		$this->escribirLogUsuarioSuspendido($usuario);
+		$this->writeLogSuspendedUser($array_User);
 	}
-	private function escribirLogNuevoUsuario($registro){
-		$con=true;
-		$le = fopen($this->logNuevosUsuarios, "a");
-		$linea="";
-		foreach ($registro as $campo){
-			if ($con){
-				$linea.='"'.strval($campo).'",';
-				$con=false;
+	private function writeLogNewUser($array_Registry){
+		$bool_con=true;
+		$file_log = fopen($this->file_logNewUsers, "a");
+		$str_Line="";
+		foreach ($array_Registry as $field){
+			if ($bool_con){
+				$str_Line.='"'.strval($field).'",';
+				$bool_con=false;
 			}
 			else {
-				$con=true;
+				$bool_con=true;
 			}
 		}
-		$linea.="\n";
-		fwrite($le, $linea);
-		fclose($le) ;
-		$this->canNuevosUsuarios++;
+		$str_Line.="\n";
+		fwrite($file_log, $str_Line);
+		fclose($file_log) ;
+		$this->int_numNewUsers++;
 	}
-	private function escribirLogUsuarioSuspendido($registro){
-		$con=true;
-		$le = fopen($this->logUsuariosSuspendidos, "a");
-		$linea="";
-		foreach ($registro as $campo){
-			if ($con){
-				$linea.='"'.strval($campo).'",';
-				$con=false;
+	private function writeLogSuspendedUser($array_Registry){
+		$bool_con=true;
+		$file_log = fopen($this->file_SuspendedUsers, "a");
+		$str_Line="";
+		foreach ($array_Registry as $field){
+			if ($bool_con){
+				$str_Line.='"'.strval($field).'",';
+				$bool_con=false;
 			}
 			else {
-				$con=true;
+				$bool_con=true;
 			}
 		}
-		$linea.="\n";
-		fwrite($le, $linea);
-		fclose($le) ;
-		$this->canUsuariosSuspendidos++;
+		$str_Line.="\n";
+		fwrite($file_log, $str_Line);
+		fclose($file_log) ;
+		$this->int_numSuspendedUsers++;
 	}
 	/**
 	 * Revisa si un usuario ya esta en la tabla de afiliados caso en el cual se deberia hacer una actualización.
 	 *
-	 * @param Array $arregloUsuario
+	 * @param Array $array_User
 	 * @return bool
 	 */
-	private function estaAfiliadoya($arregloUsuario){
+	private function isAffiliated($array_User){
 		global $TABLEAFILIADOS,$TABLETMP,$IDENUNICO;
-		//print_r($arregloUsuario);
-		$sqlquery="SELECT *  FROM `$TABLEAFILIADOS` WHERE `$IDENUNICO` LIKE  '$arregloUsuario[0]' ;";
-		$resultado=mysql_query($sqlquery) or die("No pudo realizar la consulta de revisar si el usuario ya esta");
-		$num_rows=mysql_num_rows($resultado);
-		if ($num_rows==0){
+		//print_r($array_User);
+		$sqlquery="SELECT *  FROM `$TABLEAFILIADOS` WHERE `$IDENUNICO` LIKE  '$array_User[0]' ;";
+		$sqlr_result=mysql_query($sqlquery) or die("No pudo realizar la consulta de revisar si el usuario ya esta");
+		$int_numRows=mysql_num_rows($sqlr_result);
+		if ($int_numRows==0){
 			return false;
 		}
-		elseif ($num_rows>1){
+		elseif ($int_numRows>1){
 			//echo "Existe mas de una coincidencia en la busqueda!!!.";
 			return false;
 		}
@@ -160,16 +170,16 @@ class Comparador{
 			return true;
 		}
 	}
-	private function estaReportado($arregloUsuario){
+	private function isReported($array_User){
 		global $TABLEAFILIADOS,$TABLETMP,$IDENUNICO;
-		//print_r($arregloUsuario);
-		$sqlquery="SELECT *  FROM `$TABLETMP` WHERE `$IDENUNICO` LIKE  '$arregloUsuario[0]' ;";
-		$resultado=mysql_query($sqlquery) or die("No pudo realizar la consulta de revisar si el usuario fue reportado.");
-		$num_rows=mysql_num_rows($resultado);
-		if ($num_rows==0){
+		//print_r($array_User);
+		$sqlquery="SELECT *  FROM `$TABLETMP` WHERE `$IDENUNICO` LIKE  '$array_User[0]' ;";
+		$sqlr_result=mysql_query($sqlquery) or die("No pudo realizar la consulta de revisar si el usuario fue reportado.");
+		$int_numRows=mysql_num_rows($sqlr_result);
+		if ($int_numRows==0){
 			return false;
 		}
-		elseif ($num_rows>1){
+		elseif ($int_numRows>1){
 			//echo "Existe mas de una coincidencia en la busqueda!!!.";
 			return false;
 		}
@@ -181,28 +191,28 @@ class Comparador{
 	 * Este es el algotimo de comparacion que contiene el o los criterios para ver si un afiliado esta o no esta en la tabla.
 	 *
 	 */
-	private function ejecutarAlgoritmoInsercion(){
-		$resultado=$this->cargarDatos();
-		while ($usuario=mysql_fetch_array($resultado)) {
-			if ($this->estaAfiliadoya($usuario)){
+	private function execInsertionAlgoritm(){
+		$sqlr_result=$this->loadData();
+		while ($array_User=mysql_fetch_array($sqlr_result)) {
+			if ($this->isAffiliated($array_User)){
 				//echo "";			
 			}
 			else {
-				$this->insertarNuevoUsuario($usuario);
+				$this->insertNewUser($array_User);
 			}
 		}
 	}
-	private function ejecutarAlgoritmoSuspencion(){
-		$resultado=$this->cargarDatos(false);
-		while ($usuario=mysql_fetch_array($resultado)) {
-			if ($this->estaReportado($usuario)){
+	private function execSuspentionAlgoritm(){
+		$sqlr_result=$this->loadData(false);
+		while ($array_User=mysql_fetch_array($sqlr_result)) {
+			if ($this->isReported($array_User)){
 				echo "";			
 				//echo "El afiliado fue reportado.<br/>";			
 			}
 			else {
 				echo "";
 				//echo "suspendiendo...<br/>";
-				$this->suspenderUsuario($usuario);
+				$this->suspendUser($array_User);
 			}
 		}
 	}
@@ -212,36 +222,36 @@ class Comparador{
 	 */
 	public function ejecutarProcedimiento(){
 		global $TABLEAFILIADOS,$TABLETMP;
-		$this->conectar();
-		if ($this->tablaisempty()){
+		$this->conect();
+		if ($this->tableIsEmpty()){
 			$sqlquery="INSERT INTO `$TABLEAFILIADOS` SELECT * FROM `$TABLETMP` ;";
 			mysql_query($sqlquery) or die("No pudo copiar la tabla temporal a la de afiliados".mysql_error());
 			$sqlquery2="SELECT * FROM `$TABLEAFILIADOS`;";
-			$resultado=mysql_query($sqlquery2) or die(mysql_error());
-			$num_rows=mysql_num_rows($resultado);
-			while ($res=mysql_fetch_assoc($resultado)){
-				$this->escribirLogNuevoUsuario($res);
+			$sqlr_result=mysql_query($sqlquery2) or die(mysql_error());
+			$int_numRows=mysql_num_rows($sqlr_result);
+			while ($res=mysql_fetch_assoc($sqlr_result)){
+				$this->writeLogNewUser($res);
 			}
-			$this->canNuevosUsuarios=$num_rows;
+			$this->int_numNewUsers=$int_numRows;
 		}
 		else {
-			$this->ejecutarAlgoritmoInsercion();
-			$this->ejecutarAlgoritmoSuspencion();
+			$this->execInsertionAlgoritm();
+			$this->execSuspentionAlgoritm();
 		}
-		$this->generarReportesPDF();
+		$this->generateReportPDF();
 	}
-	public function getCantidadUsuariosNuevos(){
-		return $this->canNuevosUsuarios;
+	public function getNumNewUseres(){
+		return $this->int_numNewUsers;
 	}
-	public function getCantidadUsuariosSuspendidos(){
-		return $this->canUsuariosSuspendidos;	
+	public function getNumSuspendedUseres(){
+		return $this->int_numSuspendedUsers;	
 	}
-	public function getCantidadUsuariosActualizados(){
-		return $this->canUsuariosActualizados;
+	public function getNumUpdatedUseres(){
+		return $this->int_numUpdatedUsers;
 	}
-	public function generarReportesPDF(){
+	public function generateReportPDF(){
 		$gPDF=new GeneradorReportePDF();
-		$gPDF->escribirdeArchivo($this->logNuevosUsuariosPDF,$this->logNuevosUsuarios,"Reporte de Usuarios Nuevos");
+		$gPDF->escribirdeArchivo($this->file_logNewUsersPDF,$this->file_logNewUsers,"Reporte de Usuarios Nuevos");
 	}
 }
 ?>
