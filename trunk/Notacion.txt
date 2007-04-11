@@ -1,8 +1,29 @@
-entero                                                      -> int_
-cadena                                                      -> str_
-fecha                                                       -> date_
-respuesta de un sql query                                   -> sqlr_
-arreglo                                                     -> array_
-flag                                                        -> f_
-boolean                                                     -> bool_
-archivo                                                     -> file_
+/** Prefijos de clasificacion de variables */
+
+entero							-> int_
+cadena							-> str_
+fecha 							-> date_
+respuesta de un sql query				-> sqlr_
+arreglo							-> array_
+flag 								-> f_
+boolean 							-> bool_
+archivo 							-> file_
+tablas de la base de datos				-> tbl_
+tablas del sistema					-> stbl_
+
+/** Variable de entorno */
+
+$PATH							->Raíz general de la aplicación
+$TPL								->variable por defecto del tema web (GUI)
+$INCLUDE							->path directorio con librerias, modulos y scripts (API)
+$CONFIG							->path directorio con archivos de configuración
+$COMPONENTS						->path directorio de controladoes
+$TEMPLATE							->path directorio de interfaz web (GUI)
+$MODULES							->path directorio de capa logica
+
+/** Constantes del sistema */
+
+COMPONENTS						-> prefijo de los componentes o controladores ("com_")
+MODULES							-> prefijo de los modulos("mod_")
+TEMPLATES						-> prefijo de los templates o plantillas web ("tpl_")
+
